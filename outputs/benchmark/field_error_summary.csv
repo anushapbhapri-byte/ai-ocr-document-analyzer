@@ -1,0 +1,53 @@
+method,field,error_count
+Adaptive,Invoice Date,44
+Adaptive,Invoice Number,44
+Adaptive,Client Tax ID,41
+Adaptive,Gross Worth,41
+Adaptive,VAT,40
+Adaptive,Net Worth,39
+Adaptive,Seller Tax ID,37
+Adaptive,Seller IBAN,27
+Denoise,Seller IBAN,9
+Denoise,Gross Worth,5
+Denoise,Client Tax ID,4
+Denoise,Net Worth,4
+Denoise,VAT,4
+Denoise,Invoice Date,1
+Denoise,Invoice Number,1
+Denoise,Seller Tax ID,1
+Gray,Seller IBAN,10
+Gray,Gross Worth,6
+Gray,Net Worth,5
+Gray,VAT,5
+Gray,Client Tax ID,4
+Gray,Seller Tax ID,2
+Gray,Invoice Date,1
+Gray,Invoice Number,1
+Original,Seller IBAN,11
+Original,Gross Worth,6
+Original,Net Worth,5
+Original,VAT,5
+Original,Client Tax ID,4
+Original,Seller Tax ID,2
+Original,Invoice Date,1
+Original,Invoice Number,1
+Resize,Seller IBAN,11
+Resize,Gross Worth,8
+Resize,Client Tax ID,7
+Resize,Net Worth,7
+Resize,VAT,7
+Resize,Invoice Date,6
+Resize,Invoice Number,3
+Resize,Seller Tax ID,2
+Sharpen,Seller IBAN,15
+Sharpen,Client Tax ID,9
+Sharpen,Net Worth,9
+Sharpen,Gross Worth,8
+Sharpen,Seller Tax ID,8
+Sharpen,Invoice Date,7
+Sharpen,VAT,7
+Sharpen,Invoice Number,5
+Threshold,Seller IBAN,12
+Threshold,Client Tax ID,4
+Threshold,Seller Tax ID,3
+Threshold,Invoice Date,2

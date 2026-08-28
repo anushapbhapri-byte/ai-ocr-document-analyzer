@@ -1,0 +1,21 @@
+method,error_category,error_count,total_errors,percentage_of_errors
+Adaptive,Character / Identifier Error,9,313,2.88
+Adaptive,Missing Extraction,277,313,88.5
+Adaptive,Numeric / Amount Error,27,313,8.63
+Denoise,Character / Identifier Error,2,29,6.9
+Denoise,Missing Extraction,20,29,68.97
+Denoise,Numeric / Amount Error,7,29,24.14
+Gray,Character / Identifier Error,3,34,8.82
+Gray,Missing Extraction,24,34,70.59
+Gray,Numeric / Amount Error,7,34,20.59
+Original,Character / Identifier Error,2,35,5.71
+Original,Missing Extraction,26,35,74.29
+Original,Numeric / Amount Error,7,35,20.0
+Resize,Character / Identifier Error,2,51,3.92
+Resize,Missing Extraction,45,51,88.24
+Resize,Numeric / Amount Error,4,51,7.84
+Sharpen,Character / Identifier Error,6,68,8.82
+Sharpen,Missing Extraction,47,68,69.12
+Sharpen,Numeric / Amount Error,15,68,22.06
+Threshold,Character / Identifier Error,3,21,14.29
+Threshold,Missing Extraction,18,21,85.71

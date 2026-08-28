@@ -1,0 +1,57 @@
+method,field,correct,evaluated,exact_field_accuracy,character_accuracy
+Adaptive,Invoice Number,6,50,12.0,12.0
+Adaptive,Invoice Date,6,50,12.0,12.0
+Adaptive,Seller Tax ID,13,50,26.0,29.56
+Adaptive,Client Tax ID,9,50,18.0,20.69
+Adaptive,Seller IBAN,23,50,46.0,49.27
+Adaptive,Net Worth,11,50,22.0,26.55
+Adaptive,VAT,10,50,20.0,29.35
+Adaptive,Gross Worth,9,50,18.0,29.55
+Denoise,Invoice Number,49,50,98.0,98.0
+Denoise,Invoice Date,49,50,98.0,98.0
+Denoise,Seller Tax ID,49,50,98.0,98.22
+Denoise,Client Tax ID,46,50,92.0,93.8
+Denoise,Seller IBAN,41,50,82.0,82.0
+Denoise,Net Worth,46,50,92.0,93.33
+Denoise,VAT,46,50,92.0,94.0
+Denoise,Gross Worth,45,50,90.0,92.71
+Gray,Invoice Number,49,50,98.0,98.0
+Gray,Invoice Date,49,50,98.0,98.0
+Gray,Seller Tax ID,48,50,96.0,96.67
+Gray,Client Tax ID,46,50,92.0,93.8
+Gray,Seller IBAN,40,50,80.0,80.0
+Gray,Net Worth,45,50,90.0,91.57
+Gray,VAT,45,50,90.0,92.0
+Gray,Gross Worth,44,50,88.0,90.67
+Original,Invoice Number,49,50,98.0,98.0
+Original,Invoice Date,49,50,98.0,98.0
+Original,Seller Tax ID,48,50,96.0,96.22
+Original,Client Tax ID,46,50,92.0,93.8
+Original,Seller IBAN,39,50,78.0,78.0
+Original,Net Worth,45,50,90.0,91.67
+Original,VAT,45,50,90.0,92.0
+Original,Gross Worth,44,50,88.0,90.71
+Resize,Invoice Number,47,50,94.0,95.45
+Resize,Invoice Date,44,50,88.0,88.0
+Resize,Seller Tax ID,48,50,96.0,96.0
+Resize,Client Tax ID,43,50,86.0,87.8
+Resize,Seller IBAN,39,50,78.0,78.0
+Resize,Net Worth,43,50,86.0,87.33
+Resize,VAT,43,50,86.0,87.0
+Resize,Gross Worth,42,50,84.0,86.38
+Sharpen,Invoice Number,45,50,90.0,90.0
+Sharpen,Invoice Date,43,50,86.0,86.0
+Sharpen,Seller Tax ID,42,50,84.0,84.67
+Sharpen,Client Tax ID,41,50,82.0,83.8
+Sharpen,Seller IBAN,35,50,70.0,73.55
+Sharpen,Net Worth,41,50,82.0,84.78
+Sharpen,VAT,43,50,86.0,89.13
+Sharpen,Gross Worth,42,50,84.0,88.48
+Threshold,Invoice Number,50,50,100.0,100.0
+Threshold,Invoice Date,48,50,96.0,96.0
+Threshold,Seller Tax ID,47,50,94.0,94.67
+Threshold,Client Tax ID,46,50,92.0,93.8
+Threshold,Seller IBAN,38,50,76.0,76.0
+Threshold,Net Worth,50,50,100.0,100.0
+Threshold,VAT,50,50,100.0,100.0
+Threshold,Gross Worth,50,50,100.0,100.0

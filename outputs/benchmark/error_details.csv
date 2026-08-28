@@ -1,0 +1,552 @@
+image,method,field,ground_truth,predicted,error_category
+invoice_001.jpg,Adaptive,Invoice Number,51109338,,Missing Extraction
+invoice_001.jpg,Adaptive,Invoice Date,04/13/2013,,Missing Extraction
+invoice_001.jpg,Adaptive,Seller Tax ID,945-82-2137,,Missing Extraction
+invoice_001.jpg,Adaptive,Client Tax ID,942-80-0517,,Missing Extraction
+invoice_001.jpg,Adaptive,Seller IBAN,GB75MCRL06841367619257,,Missing Extraction
+invoice_001.jpg,Adaptive,Net Worth,5640.17,,Missing Extraction
+invoice_001.jpg,Adaptive,VAT,564.02,,Missing Extraction
+invoice_001.jpg,Adaptive,Gross Worth,6204.19,,Missing Extraction
+invoice_001.jpg,Sharpen,Net Worth,5640.17,6204.19,Numeric / Amount Error
+invoice_001.jpg,Sharpen,VAT,564.02,5640.17,Numeric / Amount Error
+invoice_001.jpg,Sharpen,Gross Worth,6204.19,564.02,Numeric / Amount Error
+invoice_002.jpg,Adaptive,Invoice Date,08/07/2017,,Missing Extraction
+invoice_002.jpg,Adaptive,Seller IBAN,GB17WVTT56005535188252,GB17WV1156005535188252,Character / Identifier Error
+invoice_002.jpg,Adaptive,Net Worth,656.46,,Missing Extraction
+invoice_002.jpg,Adaptive,VAT,65.65,,Missing Extraction
+invoice_002.jpg,Adaptive,Gross Worth,722.11,,Missing Extraction
+invoice_002.jpg,Sharpen,Invoice Date,08/07/2017,,Missing Extraction
+invoice_002.jpg,Sharpen,Seller IBAN,GB17WVTT56005535188252,GB17WV1T15600553518825,Character / Identifier Error
+invoice_003.jpg,Adaptive,Invoice Number,94786467,,Missing Extraction
+invoice_003.jpg,Adaptive,Seller IBAN,GB18QZIH77960348255932,,Missing Extraction
+invoice_003.jpg,Adaptive,Gross Worth,8479.08,479.08,Numeric / Amount Error
+invoice_004.jpg,Adaptive,Invoice Number,53553822,,Missing Extraction
+invoice_004.jpg,Adaptive,Invoice Date,07/24/2012,,Missing Extraction
+invoice_004.jpg,Adaptive,Seller Tax ID,926-74-9803,,Missing Extraction
+invoice_004.jpg,Adaptive,Client Tax ID,935-94-0783,,Missing Extraction
+invoice_004.jpg,Adaptive,Net Worth,23399.04,,Missing Extraction
+invoice_004.jpg,Adaptive,VAT,2339.90,,Missing Extraction
+invoice_004.jpg,Adaptive,Gross Worth,25738.94,,Missing Extraction
+invoice_004.jpg,Resize,Invoice Number,53553822,53553822000,Character / Identifier Error
+invoice_004.jpg,Resize,Invoice Date,07/24/2012,,Missing Extraction
+invoice_004.jpg,Resize,Client Tax ID,935-94-0783,,Missing Extraction
+invoice_004.jpg,Resize,Net Worth,23399.04,,Missing Extraction
+invoice_004.jpg,Resize,VAT,2339.90,,Missing Extraction
+invoice_004.jpg,Resize,Gross Worth,25738.94,,Missing Extraction
+invoice_005.jpg,Adaptive,Invoice Number,26700559,,Missing Extraction
+invoice_005.jpg,Adaptive,Invoice Date,01/11/2018,,Missing Extraction
+invoice_005.jpg,Adaptive,Seller Tax ID,974-76-2764,,Missing Extraction
+invoice_005.jpg,Adaptive,Client Tax ID,958-82-3330,,Missing Extraction
+invoice_005.jpg,Adaptive,Net Worth,311.70,,Missing Extraction
+invoice_005.jpg,Adaptive,VAT,31.17,,Missing Extraction
+invoice_005.jpg,Adaptive,Gross Worth,342.87,,Missing Extraction
+invoice_006.jpg,Adaptive,Invoice Number,96947403,,Missing Extraction
+invoice_006.jpg,Adaptive,Seller Tax ID,944-92-0144,,Missing Extraction
+invoice_006.jpg,Adaptive,Client Tax ID,985-88-9141,,Missing Extraction
+invoice_006.jpg,Adaptive,Net Worth,481.62,,Missing Extraction
+invoice_006.jpg,Adaptive,VAT,48.16,,Missing Extraction
+invoice_006.jpg,Adaptive,Gross Worth,529.78,,Missing Extraction
+invoice_007.jpg,Original,Seller IBAN,GBO5CPFN10349037207241,,Missing Extraction
+invoice_007.jpg,Gray,Seller IBAN,GBO5CPFN10349037207241,,Missing Extraction
+invoice_007.jpg,Threshold,Seller IBAN,GBO5CPFN10349037207241,,Missing Extraction
+invoice_007.jpg,Adaptive,Invoice Number,24342647,,Missing Extraction
+invoice_007.jpg,Adaptive,Invoice Date,05/07/2020,,Missing Extraction
+invoice_007.jpg,Adaptive,Seller Tax ID,933-70-8828,,Missing Extraction
+invoice_007.jpg,Adaptive,Client Tax ID,910-72-5904,,Missing Extraction
+invoice_007.jpg,Adaptive,Seller IBAN,GBO5CPFN10349037207241,,Missing Extraction
+invoice_007.jpg,Adaptive,Net Worth,4112.98,,Missing Extraction
+invoice_007.jpg,Adaptive,VAT,411.30,,Missing Extraction
+invoice_007.jpg,Adaptive,Gross Worth,4524.28,,Missing Extraction
+invoice_007.jpg,Denoise,Seller IBAN,GBO5CPFN10349037207241,,Missing Extraction
+invoice_007.jpg,Resize,Seller IBAN,GBO5CPFN10349037207241,,Missing Extraction
+invoice_007.jpg,Sharpen,Seller IBAN,GBO5CPFN10349037207241,,Missing Extraction
+invoice_008.jpg,Adaptive,Invoice Number,76778037,,Missing Extraction
+invoice_008.jpg,Adaptive,Invoice Date,03/15/2021,,Missing Extraction
+invoice_008.jpg,Adaptive,Seller Tax ID,962-88-2450,910-87-8964,Character / Identifier Error
+invoice_008.jpg,Adaptive,Client Tax ID,910-87-8964,,Missing Extraction
+invoice_009.jpg,Adaptive,Invoice Number,34967709,,Missing Extraction
+invoice_009.jpg,Adaptive,Invoice Date,01/16/2018,,Missing Extraction
+invoice_009.jpg,Adaptive,Client Tax ID,995-75-2976,,Missing Extraction
+invoice_009.jpg,Sharpen,Seller Tax ID,913-91-8891,995-75-2976,Character / Identifier Error
+invoice_009.jpg,Sharpen,Client Tax ID,995-75-2976,,Missing Extraction
+invoice_010.jpg,Original,Client Tax ID,960-94-6747,,Missing Extraction
+invoice_010.jpg,Original,Net Worth,74.25,,Missing Extraction
+invoice_010.jpg,Original,VAT,7.43,,Missing Extraction
+invoice_010.jpg,Original,Gross Worth,81.68,,Missing Extraction
+invoice_010.jpg,Gray,Client Tax ID,960-94-6747,,Missing Extraction
+invoice_010.jpg,Gray,Net Worth,74.25,,Missing Extraction
+invoice_010.jpg,Gray,VAT,7.43,,Missing Extraction
+invoice_010.jpg,Gray,Gross Worth,81.68,,Missing Extraction
+invoice_010.jpg,Adaptive,Invoice Number,12323459,,Missing Extraction
+invoice_010.jpg,Adaptive,Invoice Date,08/04/2013,,Missing Extraction
+invoice_010.jpg,Adaptive,Seller Tax ID,902-87-8627,960-94-6747,Character / Identifier Error
+invoice_010.jpg,Adaptive,Client Tax ID,960-94-6747,,Missing Extraction
+invoice_010.jpg,Adaptive,Net Worth,74.25,,Missing Extraction
+invoice_010.jpg,Adaptive,VAT,7.43,,Missing Extraction
+invoice_010.jpg,Adaptive,Gross Worth,81.68,,Missing Extraction
+invoice_010.jpg,Denoise,Client Tax ID,960-94-6747,,Missing Extraction
+invoice_010.jpg,Denoise,Net Worth,74.25,,Missing Extraction
+invoice_010.jpg,Denoise,VAT,7.43,,Missing Extraction
+invoice_010.jpg,Denoise,Gross Worth,81.68,,Missing Extraction
+invoice_010.jpg,Resize,Client Tax ID,960-94-6747,,Missing Extraction
+invoice_010.jpg,Resize,Net Worth,74.25,,Missing Extraction
+invoice_010.jpg,Resize,VAT,7.43,,Missing Extraction
+invoice_010.jpg,Resize,Gross Worth,81.68,,Missing Extraction
+invoice_010.jpg,Sharpen,Net Worth,74.25,81.68,Numeric / Amount Error
+invoice_011.jpg,Adaptive,Invoice Number,37107781,,Missing Extraction
+invoice_011.jpg,Adaptive,Seller IBAN,GB30TGFD70872253743837,,Missing Extraction
+invoice_011.jpg,Adaptive,Net Worth,2549.93,,Missing Extraction
+invoice_011.jpg,Adaptive,VAT,254.99,,Missing Extraction
+invoice_011.jpg,Adaptive,Gross Worth,2804.92,,Missing Extraction
+invoice_012.jpg,Original,Seller IBAN,GBO4NPPR85049860720734,,Missing Extraction
+invoice_012.jpg,Gray,Seller IBAN,GBO4NPPR85049860720734,,Missing Extraction
+invoice_012.jpg,Threshold,Seller IBAN,GBO4NPPR85049860720734,,Missing Extraction
+invoice_012.jpg,Adaptive,Seller IBAN,GBO4NPPR85049860720734,,Missing Extraction
+invoice_012.jpg,Adaptive,Net Worth,14158.28,14188.28,Numeric / Amount Error
+invoice_012.jpg,Adaptive,VAT,1415.83,415.83,Numeric / Amount Error
+invoice_012.jpg,Adaptive,Gross Worth,15574.11,5574.21,Numeric / Amount Error
+invoice_012.jpg,Denoise,Seller IBAN,GBO4NPPR85049860720734,,Missing Extraction
+invoice_012.jpg,Resize,Seller IBAN,GBO4NPPR85049860720734,,Missing Extraction
+invoice_012.jpg,Sharpen,Seller IBAN,GBO4NPPR85049860720734,,Missing Extraction
+invoice_013.jpg,Adaptive,Invoice Number,69875170,,Missing Extraction
+invoice_013.jpg,Adaptive,Invoice Date,07/18/2014,,Missing Extraction
+invoice_013.jpg,Adaptive,Seller Tax ID,984-82-1277,,Missing Extraction
+invoice_013.jpg,Adaptive,Client Tax ID,988-79-9604,,Missing Extraction
+invoice_013.jpg,Adaptive,Seller IBAN,GB63MNKB15123766783579,,Missing Extraction
+invoice_013.jpg,Adaptive,Net Worth,176837.91,,Missing Extraction
+invoice_013.jpg,Adaptive,VAT,17683.79,,Missing Extraction
+invoice_013.jpg,Adaptive,Gross Worth,194521.70,,Missing Extraction
+invoice_014.jpg,Original,Seller IBAN,GB42RIFK65000994976015,,Missing Extraction
+invoice_014.jpg,Original,Net Worth,2731.78,,Missing Extraction
+invoice_014.jpg,Original,VAT,273.18,,Missing Extraction
+invoice_014.jpg,Original,Gross Worth,3004.96,,Missing Extraction
+invoice_014.jpg,Gray,Net Worth,2731.78,55.28,Numeric / Amount Error
+invoice_014.jpg,Gray,VAT,273.18,273178273.18,Numeric / Amount Error
+invoice_014.jpg,Gray,Gross Worth,3004.96,273.18,Numeric / Amount Error
+invoice_014.jpg,Threshold,Invoice Date,06/08/2011,,Missing Extraction
+invoice_014.jpg,Threshold,Seller Tax ID,938-91-6436,942-92-5992,Character / Identifier Error
+invoice_014.jpg,Threshold,Client Tax ID,942-92-5992,,Missing Extraction
+invoice_014.jpg,Threshold,Seller IBAN,GB42RIFK65000994976015,,Missing Extraction
+invoice_014.jpg,Adaptive,Invoice Number,35593328,,Missing Extraction
+invoice_014.jpg,Adaptive,Invoice Date,06/08/2011,,Missing Extraction
+invoice_014.jpg,Adaptive,Seller Tax ID,938-91-6436,,Missing Extraction
+invoice_014.jpg,Adaptive,Client Tax ID,942-92-5992,,Missing Extraction
+invoice_014.jpg,Adaptive,Seller IBAN,GB42RIFK65000994976015,,Missing Extraction
+invoice_014.jpg,Adaptive,Net Worth,2731.78,,Missing Extraction
+invoice_014.jpg,Adaptive,VAT,273.18,,Missing Extraction
+invoice_014.jpg,Adaptive,Gross Worth,3004.96,,Missing Extraction
+invoice_014.jpg,Resize,Seller IBAN,GB42RIFK65000994976015,,Missing Extraction
+invoice_014.jpg,Resize,Net Worth,2731.78,,Missing Extraction
+invoice_014.jpg,Resize,VAT,273.18,,Missing Extraction
+invoice_014.jpg,Resize,Gross Worth,3004.96,,Missing Extraction
+invoice_014.jpg,Sharpen,Invoice Number,35593328,,Missing Extraction
+invoice_014.jpg,Sharpen,Invoice Date,06/08/2011,,Missing Extraction
+invoice_014.jpg,Sharpen,Seller Tax ID,938-91-6436,,Missing Extraction
+invoice_014.jpg,Sharpen,Client Tax ID,942-92-5992,,Missing Extraction
+invoice_014.jpg,Sharpen,Seller IBAN,GB42RIFK65000994976015,,Missing Extraction
+invoice_014.jpg,Sharpen,Net Worth,2731.78,,Missing Extraction
+invoice_014.jpg,Sharpen,VAT,273.18,,Missing Extraction
+invoice_014.jpg,Sharpen,Gross Worth,3004.96,,Missing Extraction
+invoice_015.jpg,Original,Seller IBAN,GBO2HMXX72577746298746,,Missing Extraction
+invoice_015.jpg,Gray,Seller IBAN,GBO2HMXX72577746298746,,Missing Extraction
+invoice_015.jpg,Threshold,Seller IBAN,GBO2HMXX72577746298746,,Missing Extraction
+invoice_015.jpg,Adaptive,Invoice Number,74980573,,Missing Extraction
+invoice_015.jpg,Adaptive,Invoice Date,09/27/2015,,Missing Extraction
+invoice_015.jpg,Adaptive,Seller Tax ID,944-98-4907,,Missing Extraction
+invoice_015.jpg,Adaptive,Client Tax ID,901-84-6442,,Missing Extraction
+invoice_015.jpg,Adaptive,Seller IBAN,GBO2HMXX72577746298746,,Missing Extraction
+invoice_015.jpg,Denoise,Seller IBAN,GBO2HMXX72577746298746,,Missing Extraction
+invoice_015.jpg,Resize,Seller IBAN,GBO2HMXX72577746298746,,Missing Extraction
+invoice_015.jpg,Sharpen,Seller IBAN,GBO2HMXX72577746298746,,Missing Extraction
+invoice_016.jpg,Original,Invoice Number,37060863,,Missing Extraction
+invoice_016.jpg,Original,Invoice Date,01/30/2021,,Missing Extraction
+invoice_016.jpg,Original,Seller Tax ID,964-80-9962,,Missing Extraction
+invoice_016.jpg,Original,Client Tax ID,953-87-7430,,Missing Extraction
+invoice_016.jpg,Gray,Invoice Number,37060863,,Missing Extraction
+invoice_016.jpg,Gray,Invoice Date,01/30/2021,,Missing Extraction
+invoice_016.jpg,Gray,Seller Tax ID,964-80-9962,953-87-7430,Character / Identifier Error
+invoice_016.jpg,Gray,Client Tax ID,953-87-7430,,Missing Extraction
+invoice_016.jpg,Adaptive,Invoice Number,37060863,,Missing Extraction
+invoice_016.jpg,Adaptive,Invoice Date,01/30/2021,,Missing Extraction
+invoice_016.jpg,Adaptive,Seller Tax ID,964-80-9962,,Missing Extraction
+invoice_016.jpg,Adaptive,Client Tax ID,953-87-7430,,Missing Extraction
+invoice_016.jpg,Adaptive,Seller IBAN,GB79IBVF13930075179399,,Missing Extraction
+invoice_016.jpg,Adaptive,Net Worth,1838.93,,Missing Extraction
+invoice_016.jpg,Adaptive,VAT,183.89,,Missing Extraction
+invoice_016.jpg,Adaptive,Gross Worth,2022.82,,Missing Extraction
+invoice_016.jpg,Denoise,Invoice Number,37060863,,Missing Extraction
+invoice_016.jpg,Denoise,Invoice Date,01/30/2021,,Missing Extraction
+invoice_016.jpg,Denoise,Client Tax ID,953-87-7430,,Missing Extraction
+invoice_016.jpg,Resize,Invoice Number,37060863,,Missing Extraction
+invoice_016.jpg,Resize,Invoice Date,01/30/2021,,Missing Extraction
+invoice_016.jpg,Resize,Seller Tax ID,964-80-9962,,Missing Extraction
+invoice_016.jpg,Resize,Client Tax ID,953-87-7430,,Missing Extraction
+invoice_016.jpg,Sharpen,Invoice Number,37060863,,Missing Extraction
+invoice_016.jpg,Sharpen,Invoice Date,01/30/2021,,Missing Extraction
+invoice_016.jpg,Sharpen,Seller Tax ID,964-80-9962,,Missing Extraction
+invoice_016.jpg,Sharpen,Client Tax ID,953-87-7430,,Missing Extraction
+invoice_016.jpg,Sharpen,Seller IBAN,GB79IBVF13930075179399,,Missing Extraction
+invoice_016.jpg,Sharpen,Net Worth,1838.93,194.00,Numeric / Amount Error
+invoice_016.jpg,Sharpen,VAT,183.89,100194.00,Numeric / Amount Error
+invoice_016.jpg,Sharpen,Gross Worth,2022.82,213.40,Numeric / Amount Error
+invoice_017.jpg,Original,Seller IBAN,GB89DNYK55635059269556,,Missing Extraction
+invoice_017.jpg,Gray,Seller IBAN,GB89DNYK55635059269556,,Missing Extraction
+invoice_017.jpg,Adaptive,Invoice Number,61669642,,Missing Extraction
+invoice_017.jpg,Adaptive,Invoice Date,11/12/2013,,Missing Extraction
+invoice_017.jpg,Adaptive,Seller Tax ID,940-76-9247,,Missing Extraction
+invoice_017.jpg,Adaptive,Client Tax ID,909-87-3064,,Missing Extraction
+invoice_017.jpg,Adaptive,Seller IBAN,GB89DNYK55635059269556,,Missing Extraction
+invoice_017.jpg,Adaptive,Net Worth,137.62,,Missing Extraction
+invoice_017.jpg,Adaptive,VAT,13.76,,Missing Extraction
+invoice_017.jpg,Adaptive,Gross Worth,151.38,,Missing Extraction
+invoice_018.jpg,Original,Seller IBAN,GBO5IPNV34325216718258,,Missing Extraction
+invoice_018.jpg,Gray,Seller IBAN,GBO5IPNV34325216718258,,Missing Extraction
+invoice_018.jpg,Threshold,Seller IBAN,GBO5IPNV34325216718258,,Missing Extraction
+invoice_018.jpg,Adaptive,Invoice Number,60456703,,Missing Extraction
+invoice_018.jpg,Adaptive,Invoice Date,09/01/2016,,Missing Extraction
+invoice_018.jpg,Adaptive,Seller Tax ID,970-94-1776,,Missing Extraction
+invoice_018.jpg,Adaptive,Client Tax ID,991-84-7712,,Missing Extraction
+invoice_018.jpg,Adaptive,Seller IBAN,GBO5IPNV34325216718258,,Missing Extraction
+invoice_018.jpg,Adaptive,Net Worth,339.98,,Missing Extraction
+invoice_018.jpg,Adaptive,VAT,34.00,,Missing Extraction
+invoice_018.jpg,Adaptive,Gross Worth,373.98,,Missing Extraction
+invoice_018.jpg,Denoise,Seller IBAN,GBO5IPNV34325216718258,,Missing Extraction
+invoice_018.jpg,Resize,Invoice Number,60456703,,Missing Extraction
+invoice_018.jpg,Resize,Invoice Date,09/01/2016,,Missing Extraction
+invoice_018.jpg,Resize,Seller Tax ID,970-94-1776,,Missing Extraction
+invoice_018.jpg,Resize,Client Tax ID,991-84-7712,,Missing Extraction
+invoice_018.jpg,Resize,Seller IBAN,GBO5IPNV34325216718258,,Missing Extraction
+invoice_018.jpg,Resize,Net Worth,339.98,,Missing Extraction
+invoice_018.jpg,Resize,VAT,34.00,,Missing Extraction
+invoice_018.jpg,Resize,Gross Worth,373.98,,Missing Extraction
+invoice_018.jpg,Sharpen,Invoice Number,60456703,,Missing Extraction
+invoice_018.jpg,Sharpen,Invoice Date,09/01/2016,,Missing Extraction
+invoice_018.jpg,Sharpen,Seller Tax ID,970-94-1776,,Missing Extraction
+invoice_018.jpg,Sharpen,Client Tax ID,991-84-7712,,Missing Extraction
+invoice_018.jpg,Sharpen,Seller IBAN,GBO5IPNV34325216718258,,Missing Extraction
+invoice_018.jpg,Sharpen,Net Worth,339.98,2.00,Numeric / Amount Error
+invoice_018.jpg,Sharpen,Gross Worth,373.98,339.98,Numeric / Amount Error
+invoice_019.jpg,Adaptive,Invoice Number,97388190,,Missing Extraction
+invoice_019.jpg,Adaptive,Invoice Date,12/13/2016,,Missing Extraction
+invoice_019.jpg,Adaptive,Seller Tax ID,912-83-9339,986-76-0381,Character / Identifier Error
+invoice_019.jpg,Adaptive,Client Tax ID,986-76-0381,,Missing Extraction
+invoice_019.jpg,Adaptive,VAT,29.99,25.99,Numeric / Amount Error
+invoice_020.jpg,Adaptive,Invoice Number,10942693,,Missing Extraction
+invoice_020.jpg,Adaptive,Invoice Date,06/13/2018,,Missing Extraction
+invoice_020.jpg,Adaptive,Seller Tax ID,922-83-3513,,Missing Extraction
+invoice_020.jpg,Adaptive,Client Tax ID,947-74-2259,,Missing Extraction
+invoice_020.jpg,Adaptive,Seller IBAN,GB76CSSR03453199859434,,Missing Extraction
+invoice_020.jpg,Adaptive,Net Worth,19228.78,,Missing Extraction
+invoice_020.jpg,Adaptive,VAT,1922.88,,Missing Extraction
+invoice_020.jpg,Adaptive,Gross Worth,21151.66,,Missing Extraction
+invoice_021.jpg,Adaptive,Invoice Number,20434959,,Missing Extraction
+invoice_021.jpg,Adaptive,Invoice Date,12/20/2011,,Missing Extraction
+invoice_021.jpg,Adaptive,Seller Tax ID,932-75-6582,,Missing Extraction
+invoice_021.jpg,Adaptive,Client Tax ID,940-95-1310,,Missing Extraction
+invoice_021.jpg,Adaptive,Seller IBAN,GB35IHYS72111215388563,,Missing Extraction
+invoice_021.jpg,Adaptive,Net Worth,26.97,,Missing Extraction
+invoice_021.jpg,Adaptive,VAT,2.70,,Missing Extraction
+invoice_021.jpg,Adaptive,Gross Worth,29.67,,Missing Extraction
+invoice_022.jpg,Original,Client Tax ID,913-994-1721,913-94-1721,Character / Identifier Error
+invoice_022.jpg,Original,Seller IBAN,GBO3KMWL18203008008726,,Missing Extraction
+invoice_022.jpg,Gray,Client Tax ID,913-994-1721,913-94-1721,Character / Identifier Error
+invoice_022.jpg,Gray,Seller IBAN,GBO3KMWL18203008008726,,Missing Extraction
+invoice_022.jpg,Threshold,Client Tax ID,913-994-1721,913-94-1721,Character / Identifier Error
+invoice_022.jpg,Threshold,Seller IBAN,GBO3KMWL18203008008726,,Missing Extraction
+invoice_022.jpg,Adaptive,Invoice Number,58379529,,Missing Extraction
+invoice_022.jpg,Adaptive,Invoice Date,05/31/2011,,Missing Extraction
+invoice_022.jpg,Adaptive,Client Tax ID,913-994-1721,913-94-1721,Character / Identifier Error
+invoice_022.jpg,Adaptive,Seller IBAN,GBO3KMWL18203008008726,,Missing Extraction
+invoice_022.jpg,Adaptive,Net Worth,2667.91,,Missing Extraction
+invoice_022.jpg,Adaptive,VAT,266.79,,Missing Extraction
+invoice_022.jpg,Adaptive,Gross Worth,2934.70,,Missing Extraction
+invoice_022.jpg,Denoise,Client Tax ID,913-994-1721,913-94-1721,Character / Identifier Error
+invoice_022.jpg,Denoise,Seller IBAN,GBO3KMWL18203008008726,,Missing Extraction
+invoice_022.jpg,Resize,Client Tax ID,913-994-1721,913-94-1721,Character / Identifier Error
+invoice_022.jpg,Resize,Seller IBAN,GBO3KMWL18203008008726,,Missing Extraction
+invoice_022.jpg,Sharpen,Client Tax ID,913-994-1721,913-94-1721,Character / Identifier Error
+invoice_022.jpg,Sharpen,Seller IBAN,GBO3KMWL18203008008726,,Missing Extraction
+invoice_023.jpg,Adaptive,Invoice Number,54661411,,Missing Extraction
+invoice_023.jpg,Adaptive,Gross Worth,7920.58,920.58,Numeric / Amount Error
+invoice_024.jpg,Adaptive,Invoice Number,32830026,,Missing Extraction
+invoice_024.jpg,Adaptive,Invoice Date,12/20/2014,,Missing Extraction
+invoice_024.jpg,Adaptive,Seller Tax ID,907-77-8965,,Missing Extraction
+invoice_024.jpg,Adaptive,Client Tax ID,995-83-6792,,Missing Extraction
+invoice_024.jpg,Adaptive,Net Worth,1036.58,,Missing Extraction
+invoice_024.jpg,Adaptive,VAT,103.66,,Missing Extraction
+invoice_024.jpg,Adaptive,Gross Worth,1140.24,,Missing Extraction
+invoice_024.jpg,Resize,Invoice Date,12/20/2014,,Missing Extraction
+invoice_024.jpg,Resize,Client Tax ID,995-83-6792,,Missing Extraction
+invoice_025.jpg,Adaptive,Invoice Number,44848471,,Missing Extraction
+invoice_025.jpg,Adaptive,Invoice Date,03/26/2021,,Missing Extraction
+invoice_025.jpg,Adaptive,Seller Tax ID,902-74-7536,,Missing Extraction
+invoice_025.jpg,Adaptive,Client Tax ID,913-71-7249,,Missing Extraction
+invoice_025.jpg,Adaptive,Net Worth,762.44,,Missing Extraction
+invoice_025.jpg,Adaptive,VAT,76.24,,Missing Extraction
+invoice_025.jpg,Adaptive,Gross Worth,838.68,,Missing Extraction
+invoice_026.jpg,Adaptive,Invoice Number,51295021,,Missing Extraction
+invoice_026.jpg,Adaptive,Invoice Date,01/05/2017,,Missing Extraction
+invoice_026.jpg,Adaptive,Seller Tax ID,922-88-3881,,Missing Extraction
+invoice_026.jpg,Adaptive,Client Tax ID,965-87-8819,,Missing Extraction
+invoice_026.jpg,Adaptive,Seller IBAN,GB64NDCS47020318571282,,Missing Extraction
+invoice_026.jpg,Adaptive,Net Worth,8415.08,,Missing Extraction
+invoice_026.jpg,Adaptive,VAT,841.51,,Missing Extraction
+invoice_026.jpg,Adaptive,Gross Worth,9256.59,,Missing Extraction
+invoice_027.jpg,Adaptive,Invoice Number,22083742,,Missing Extraction
+invoice_027.jpg,Adaptive,Invoice Date,03/01/2014,,Missing Extraction
+invoice_027.jpg,Adaptive,Client Tax ID,934-70-6847,,Missing Extraction
+invoice_027.jpg,Adaptive,Net Worth,7200.00,,Missing Extraction
+invoice_027.jpg,Adaptive,VAT,720.00,,Missing Extraction
+invoice_027.jpg,Adaptive,Gross Worth,7920.00,,Missing Extraction
+invoice_028.jpg,Threshold,Seller IBAN,GB210JGQ49248059733020,,Missing Extraction
+invoice_028.jpg,Adaptive,Invoice Date,01/28/2021,,Missing Extraction
+invoice_028.jpg,Adaptive,Seller Tax ID,969-72-5121,,Missing Extraction
+invoice_028.jpg,Adaptive,Client Tax ID,941-88-5692,,Missing Extraction
+invoice_028.jpg,Adaptive,Seller IBAN,GB210JGQ49248059733020,,Missing Extraction
+invoice_028.jpg,Sharpen,Seller IBAN,GB210JGQ49248059733020,,Missing Extraction
+invoice_029.jpg,Adaptive,Invoice Date,01/03/2014,,Missing Extraction
+invoice_029.jpg,Adaptive,Seller Tax ID,944-72-9866,988-84-2952,Character / Identifier Error
+invoice_029.jpg,Adaptive,Client Tax ID,988-84-2952,,Missing Extraction
+invoice_029.jpg,Adaptive,Seller IBAN,GB10AMVD30795287137531,,Missing Extraction
+invoice_030.jpg,Original,Net Worth,297.35,29.73,Numeric / Amount Error
+invoice_030.jpg,Original,VAT,29.73,297.35,Numeric / Amount Error
+invoice_030.jpg,Original,Gross Worth,327.08,29.73,Numeric / Amount Error
+invoice_030.jpg,Gray,Net Worth,297.35,29.73,Numeric / Amount Error
+invoice_030.jpg,Gray,VAT,29.73,297.35,Numeric / Amount Error
+invoice_030.jpg,Gray,Gross Worth,327.08,29.73,Numeric / Amount Error
+invoice_030.jpg,Adaptive,Invoice Number,15001300,,Missing Extraction
+invoice_030.jpg,Adaptive,Invoice Date,02/18/2014,,Missing Extraction
+invoice_030.jpg,Adaptive,Seller Tax ID,929-82-4759,,Missing Extraction
+invoice_030.jpg,Adaptive,Client Tax ID,991-91-7229,,Missing Extraction
+invoice_030.jpg,Adaptive,Net Worth,297.35,1072530.75,Numeric / Amount Error
+invoice_030.jpg,Adaptive,VAT,29.73,33.83,Numeric / Amount Error
+invoice_030.jpg,Denoise,Net Worth,297.35,29.73,Numeric / Amount Error
+invoice_030.jpg,Denoise,VAT,29.73,297.35,Numeric / Amount Error
+invoice_030.jpg,Denoise,Gross Worth,327.08,29.73,Numeric / Amount Error
+invoice_030.jpg,Resize,Net Worth,297.35,29.75,Numeric / Amount Error
+invoice_030.jpg,Resize,VAT,29.73,297.35,Numeric / Amount Error
+invoice_030.jpg,Resize,Gross Worth,327.08,29.73,Numeric / Amount Error
+invoice_031.jpg,Adaptive,Invoice Number,33102457,,Missing Extraction
+invoice_031.jpg,Adaptive,Invoice Date,09/18/2018,,Missing Extraction
+invoice_031.jpg,Adaptive,Net Worth,16619.31,24.00,Numeric / Amount Error
+invoice_031.jpg,Adaptive,VAT,1661.93,1.66,Numeric / Amount Error
+invoice_031.jpg,Adaptive,Gross Worth,18281.24,1.93,Numeric / Amount Error
+invoice_032.jpg,Adaptive,Invoice Number,37877758,,Missing Extraction
+invoice_032.jpg,Adaptive,Invoice Date,07/02/2014,,Missing Extraction
+invoice_032.jpg,Adaptive,Net Worth,43018.47,4.30,Numeric / Amount Error
+invoice_032.jpg,Adaptive,VAT,4301.85,1.85,Numeric / Amount Error
+invoice_032.jpg,Adaptive,Gross Worth,47320.32,320.32,Numeric / Amount Error
+invoice_033.jpg,Original,Seller IBAN,GB9ORYME18980824175499,,Missing Extraction
+invoice_033.jpg,Gray,Seller IBAN,GB9ORYME18980824175499,,Missing Extraction
+invoice_033.jpg,Threshold,Seller IBAN,GB9ORYME18980824175499,,Missing Extraction
+invoice_033.jpg,Adaptive,Invoice Number,96430839,,Missing Extraction
+invoice_033.jpg,Adaptive,Invoice Date,01/13/2019,,Missing Extraction
+invoice_033.jpg,Adaptive,Seller Tax ID,971-80-5191,,Missing Extraction
+invoice_033.jpg,Adaptive,Client Tax ID,934-91-7455,,Missing Extraction
+invoice_033.jpg,Adaptive,Seller IBAN,GB9ORYME18980824175499,,Missing Extraction
+invoice_033.jpg,Adaptive,Net Worth,4507.42,,Missing Extraction
+invoice_033.jpg,Adaptive,VAT,450.74,,Missing Extraction
+invoice_033.jpg,Adaptive,Gross Worth,4958.16,,Missing Extraction
+invoice_033.jpg,Denoise,Seller IBAN,GB9ORYME18980824175499,,Missing Extraction
+invoice_033.jpg,Resize,Seller IBAN,GB9ORYME18980824175499,,Missing Extraction
+invoice_033.jpg,Sharpen,Seller IBAN,GB9ORYME18980824175499,,Missing Extraction
+invoice_034.jpg,Adaptive,Invoice Number,56908352,,Missing Extraction
+invoice_034.jpg,Adaptive,Invoice Date,01/11/2015,,Missing Extraction
+invoice_034.jpg,Adaptive,Seller Tax ID,914-76-8473,,Missing Extraction
+invoice_034.jpg,Adaptive,Client Tax ID,904-76-9217,,Missing Extraction
+invoice_034.jpg,Adaptive,Seller IBAN,GB68RRBM34982962207975,,Missing Extraction
+invoice_034.jpg,Adaptive,Net Worth,171.01,,Missing Extraction
+invoice_034.jpg,Adaptive,VAT,17.10,,Missing Extraction
+invoice_034.jpg,Adaptive,Gross Worth,188.11,,Missing Extraction
+invoice_035.jpg,Adaptive,Invoice Number,36187296,,Missing Extraction
+invoice_035.jpg,Adaptive,Invoice Date,01/05/2017,,Missing Extraction
+invoice_035.jpg,Adaptive,Seller Tax ID,951-73-0229,,Missing Extraction
+invoice_035.jpg,Adaptive,Client Tax ID,966-84-8472,,Missing Extraction
+invoice_035.jpg,Adaptive,Net Worth,471.64,6.33,Numeric / Amount Error
+invoice_035.jpg,Adaptive,VAT,47.16,471.64,Numeric / Amount Error
+invoice_035.jpg,Adaptive,Gross Worth,518.80,4716818.80,Numeric / Amount Error
+invoice_036.jpg,Original,Net Worth,287.36,24.05,Numeric / Amount Error
+invoice_036.jpg,Original,VAT,28.74,287.36,Numeric / Amount Error
+invoice_036.jpg,Original,Gross Worth,316.10,28.74,Numeric / Amount Error
+invoice_036.jpg,Gray,Net Worth,287.36,,Missing Extraction
+invoice_036.jpg,Gray,VAT,28.74,,Missing Extraction
+invoice_036.jpg,Gray,Gross Worth,316.10,,Missing Extraction
+invoice_036.jpg,Adaptive,Invoice Number,44456646,,Missing Extraction
+invoice_036.jpg,Adaptive,Invoice Date,03/21/2015,,Missing Extraction
+invoice_036.jpg,Adaptive,Seller Tax ID,916-98-8677,,Missing Extraction
+invoice_036.jpg,Adaptive,Client Tax ID,940-84-8016,,Missing Extraction
+invoice_036.jpg,Adaptive,Seller IBAN,GB48PIBU37974446029688,,Missing Extraction
+invoice_036.jpg,Adaptive,Net Worth,287.36,,Missing Extraction
+invoice_036.jpg,Adaptive,VAT,28.74,,Missing Extraction
+invoice_036.jpg,Adaptive,Gross Worth,316.10,,Missing Extraction
+invoice_036.jpg,Denoise,Net Worth,287.36,5.00,Numeric / Amount Error
+invoice_036.jpg,Denoise,VAT,28.74,287.36,Numeric / Amount Error
+invoice_036.jpg,Denoise,Gross Worth,316.10,28.74,Numeric / Amount Error
+invoice_036.jpg,Resize,Net Worth,287.36,,Missing Extraction
+invoice_036.jpg,Resize,VAT,28.74,,Missing Extraction
+invoice_036.jpg,Resize,Gross Worth,316.10,,Missing Extraction
+invoice_036.jpg,Sharpen,Invoice Number,44456646,,Missing Extraction
+invoice_036.jpg,Sharpen,Invoice Date,03/21/2015,,Missing Extraction
+invoice_036.jpg,Sharpen,Seller Tax ID,916-98-8677,,Missing Extraction
+invoice_036.jpg,Sharpen,Client Tax ID,940-84-8016,,Missing Extraction
+invoice_036.jpg,Sharpen,Seller IBAN,GB48PIBU37974446029688,,Missing Extraction
+invoice_036.jpg,Sharpen,Net Worth,287.36,99.95,Numeric / Amount Error
+invoice_036.jpg,Sharpen,VAT,28.74,7.36,Numeric / Amount Error
+invoice_037.jpg,Adaptive,Invoice Date,03/12/2012,,Missing Extraction
+invoice_037.jpg,Adaptive,Seller Tax ID,929-76-1260,,Missing Extraction
+invoice_037.jpg,Adaptive,Client Tax ID,940-86-9734,,Missing Extraction
+invoice_037.jpg,Adaptive,Seller IBAN,GB49GJRS28729607733931,,Missing Extraction
+invoice_037.jpg,Adaptive,Net Worth,1335.86,20.00,Numeric / Amount Error
+invoice_037.jpg,Adaptive,VAT,133.59,1.33,Numeric / Amount Error
+invoice_037.jpg,Adaptive,Gross Worth,1469.45,133.59,Numeric / Amount Error
+invoice_038.jpg,Original,Seller IBAN,GBO4ZWCK22425880230961,,Missing Extraction
+invoice_038.jpg,Gray,Seller IBAN,GBO4ZWCK22425880230961,,Missing Extraction
+invoice_038.jpg,Threshold,Seller IBAN,GBO4ZWCK22425880230961,,Missing Extraction
+invoice_038.jpg,Adaptive,Invoice Number,77596491,,Missing Extraction
+invoice_038.jpg,Adaptive,Invoice Date,01/31/2021,,Missing Extraction
+invoice_038.jpg,Adaptive,Seller Tax ID,988-83-0971,,Missing Extraction
+invoice_038.jpg,Adaptive,Client Tax ID,926-85-5660,,Missing Extraction
+invoice_038.jpg,Adaptive,Seller IBAN,GBO4ZWCK22425880230961,,Missing Extraction
+invoice_038.jpg,Adaptive,Net Worth,22.68,,Missing Extraction
+invoice_038.jpg,Adaptive,VAT,2.27,,Missing Extraction
+invoice_038.jpg,Adaptive,Gross Worth,24.95,,Missing Extraction
+invoice_038.jpg,Denoise,Seller IBAN,GBO4ZWCK22425880230961,,Missing Extraction
+invoice_038.jpg,Resize,Seller IBAN,GBO4ZWCK22425880230961,,Missing Extraction
+invoice_038.jpg,Sharpen,Invoice Number,77596491,,Missing Extraction
+invoice_038.jpg,Sharpen,Invoice Date,01/31/2021,,Missing Extraction
+invoice_038.jpg,Sharpen,Seller Tax ID,988-83-0971,,Missing Extraction
+invoice_038.jpg,Sharpen,Client Tax ID,926-85-5660,,Missing Extraction
+invoice_038.jpg,Sharpen,Seller IBAN,GBO4ZWCK22425880230961,,Missing Extraction
+invoice_038.jpg,Sharpen,Net Worth,22.68,,Missing Extraction
+invoice_038.jpg,Sharpen,VAT,2.27,,Missing Extraction
+invoice_038.jpg,Sharpen,Gross Worth,24.95,,Missing Extraction
+invoice_039.jpg,Adaptive,Invoice Number,68688408,,Missing Extraction
+invoice_039.jpg,Adaptive,Invoice Date,03/20/2016,,Missing Extraction
+invoice_039.jpg,Adaptive,Seller Tax ID,953-84-2239,,Missing Extraction
+invoice_039.jpg,Adaptive,Client Tax ID,904-82-9186,,Missing Extraction
+invoice_040.jpg,Original,Seller IBAN,GBO2QDFL22211399552517,,Missing Extraction
+invoice_040.jpg,Gray,Seller IBAN,GBO2QDFL22211399552517,,Missing Extraction
+invoice_040.jpg,Threshold,Seller IBAN,GBO2QDFL22211399552517,,Missing Extraction
+invoice_040.jpg,Adaptive,Invoice Number,57986024,,Missing Extraction
+invoice_040.jpg,Adaptive,Invoice Date,10/17/2015,,Missing Extraction
+invoice_040.jpg,Adaptive,Seller Tax ID,959-72-2889,,Missing Extraction
+invoice_040.jpg,Adaptive,Client Tax ID,907-74-8078,,Missing Extraction
+invoice_040.jpg,Adaptive,Seller IBAN,GBO2QDFL22211399552517,,Missing Extraction
+invoice_040.jpg,Adaptive,Net Worth,215.72,,Missing Extraction
+invoice_040.jpg,Adaptive,VAT,21.57,,Missing Extraction
+invoice_040.jpg,Adaptive,Gross Worth,237.29,,Missing Extraction
+invoice_040.jpg,Denoise,Seller IBAN,GBO2QDFL22211399552517,,Missing Extraction
+invoice_040.jpg,Resize,Seller IBAN,GBO2QDFL22211399552517,,Missing Extraction
+invoice_040.jpg,Sharpen,Seller IBAN,GBO2QDFL22211399552517,,Missing Extraction
+invoice_041.jpg,Adaptive,Invoice Number,11580833,,Missing Extraction
+invoice_041.jpg,Adaptive,Invoice Date,11/24/2019,,Missing Extraction
+invoice_041.jpg,Adaptive,Seller Tax ID,968-86-1662,,Missing Extraction
+invoice_041.jpg,Adaptive,Client Tax ID,979-96-3992,,Missing Extraction
+invoice_041.jpg,Adaptive,Seller IBAN,GB61VHVS67246807986062,,Missing Extraction
+invoice_041.jpg,Adaptive,Net Worth,4671.23,,Missing Extraction
+invoice_041.jpg,Adaptive,VAT,467.12,,Missing Extraction
+invoice_041.jpg,Adaptive,Gross Worth,5138.35,,Missing Extraction
+invoice_041.jpg,Sharpen,Net Worth,4671.23,723.80,Numeric / Amount Error
+invoice_041.jpg,Sharpen,VAT,467.12,4671.23,Numeric / Amount Error
+invoice_041.jpg,Sharpen,Gross Worth,5138.35,467.12,Numeric / Amount Error
+invoice_042.jpg,Original,Gross Worth,5459.75,5453.75,Numeric / Amount Error
+invoice_042.jpg,Gray,Gross Worth,5459.75,5453.75,Numeric / Amount Error
+invoice_042.jpg,Threshold,Invoice Date,11/22/2013,,Missing Extraction
+invoice_042.jpg,Threshold,Seller Tax ID,962-88-9077,,Missing Extraction
+invoice_042.jpg,Threshold,Client Tax ID,997-95-5690,,Missing Extraction
+invoice_042.jpg,Threshold,Seller IBAN,GB23TMKM50357047352524,,Missing Extraction
+invoice_042.jpg,Adaptive,Invoice Date,11/22/2013,,Missing Extraction
+invoice_042.jpg,Adaptive,Seller Tax ID,962-88-9077,962-88-8077,Character / Identifier Error
+invoice_042.jpg,Adaptive,Client Tax ID,997-95-5690,887-05-5000,Character / Identifier Error
+invoice_042.jpg,Adaptive,Seller IBAN,GB23TMKM50357047352524,GB231MXNDB035704735252,Character / Identifier Error
+invoice_042.jpg,Adaptive,Net Worth,4963.41,,Missing Extraction
+invoice_042.jpg,Adaptive,VAT,496.34,,Missing Extraction
+invoice_042.jpg,Adaptive,Gross Worth,5459.75,,Missing Extraction
+invoice_042.jpg,Denoise,Gross Worth,5459.75,5453.75,Numeric / Amount Error
+invoice_042.jpg,Resize,Invoice Date,11/22/2013,,Missing Extraction
+invoice_042.jpg,Resize,Gross Worth,5459.75,5453.75,Numeric / Amount Error
+invoice_042.jpg,Sharpen,Invoice Date,11/22/2013,,Missing Extraction
+invoice_042.jpg,Sharpen,Seller Tax ID,962-88-9077,997-95-5690,Character / Identifier Error
+invoice_042.jpg,Sharpen,Client Tax ID,997-95-5690,,Missing Extraction
+invoice_042.jpg,Sharpen,Seller IBAN,GB23TMKM50357047352524,GB231TMKM5035704735252,Character / Identifier Error
+invoice_042.jpg,Sharpen,Gross Worth,5459.75,5453.75,Numeric / Amount Error
+invoice_043.jpg,Adaptive,Invoice Number,99314100,,Missing Extraction
+invoice_043.jpg,Adaptive,Gross Worth,6573.33,573.33,Numeric / Amount Error
+invoice_043.jpg,Resize,Seller IBAN,GB20WFQR49970703277369,,Missing Extraction
+invoice_044.jpg,Original,Seller Tax ID,957-92-5322,922-87-4664,Character / Identifier Error
+invoice_044.jpg,Original,Client Tax ID,922-87-4664,,Missing Extraction
+invoice_044.jpg,Gray,Seller Tax ID,957-92-5322,922-87-4664,Character / Identifier Error
+invoice_044.jpg,Gray,Client Tax ID,922-87-4664,,Missing Extraction
+invoice_044.jpg,Threshold,Seller Tax ID,957-92-5322,922-87-4664,Character / Identifier Error
+invoice_044.jpg,Threshold,Client Tax ID,922-87-4664,,Missing Extraction
+invoice_044.jpg,Adaptive,Invoice Number,81978187,,Missing Extraction
+invoice_044.jpg,Adaptive,Invoice Date,01/17/2013,,Missing Extraction
+invoice_044.jpg,Adaptive,Seller Tax ID,957-92-5322,,Missing Extraction
+invoice_044.jpg,Adaptive,Client Tax ID,922-87-4664,,Missing Extraction
+invoice_044.jpg,Adaptive,Net Worth,113.45,,Missing Extraction
+invoice_044.jpg,Adaptive,VAT,11.34,,Missing Extraction
+invoice_044.jpg,Adaptive,Gross Worth,124.79,,Missing Extraction
+invoice_044.jpg,Denoise,Seller Tax ID,957-92-5322,922-87-4664,Character / Identifier Error
+invoice_044.jpg,Denoise,Client Tax ID,922-87-4664,,Missing Extraction
+invoice_044.jpg,Resize,Invoice Date,01/17/2013,,Missing Extraction
+invoice_044.jpg,Resize,Client Tax ID,922-87-4664,,Missing Extraction
+invoice_044.jpg,Sharpen,Seller Tax ID,957-92-5322,922-87-4664,Character / Identifier Error
+invoice_044.jpg,Sharpen,Client Tax ID,922-87-4664,,Missing Extraction
+invoice_045.jpg,Adaptive,Invoice Number,74589240,,Missing Extraction
+invoice_045.jpg,Adaptive,Invoice Date,12/08/2013,,Missing Extraction
+invoice_045.jpg,Adaptive,Seller Tax ID,977-76-9492,,Missing Extraction
+invoice_045.jpg,Adaptive,Client Tax ID,981-73-4585,,Missing Extraction
+invoice_045.jpg,Adaptive,Net Worth,11794.44,,Missing Extraction
+invoice_045.jpg,Adaptive,VAT,1179.44,,Missing Extraction
+invoice_045.jpg,Adaptive,Gross Worth,12973.88,,Missing Extraction
+invoice_046.jpg,Adaptive,Invoice Number,72128555,,Missing Extraction
+invoice_046.jpg,Adaptive,Invoice Date,12/25/2013,,Missing Extraction
+invoice_046.jpg,Adaptive,Net Worth,665.76,,Missing Extraction
+invoice_046.jpg,Adaptive,VAT,66.58,,Missing Extraction
+invoice_046.jpg,Adaptive,Gross Worth,732.34,,Missing Extraction
+invoice_047.jpg,Adaptive,Invoice Number,89969473,,Missing Extraction
+invoice_047.jpg,Adaptive,Invoice Date,10/29/2016,,Missing Extraction
+invoice_047.jpg,Adaptive,Client Tax ID,944-77-3882,,Missing Extraction
+invoice_048.jpg,Adaptive,Invoice Number,16273983,,Missing Extraction
+invoice_048.jpg,Adaptive,Invoice Date,04/01/2017,,Missing Extraction
+invoice_048.jpg,Adaptive,Seller Tax ID,909-83-7738,,Missing Extraction
+invoice_048.jpg,Adaptive,Client Tax ID,901-88-0463,,Missing Extraction
+invoice_048.jpg,Adaptive,Net Worth,744.60,26.41,Numeric / Amount Error
+invoice_048.jpg,Adaptive,VAT,74.46,744.60,Numeric / Amount Error
+invoice_048.jpg,Adaptive,Gross Worth,819.06,174.40,Numeric / Amount Error
+invoice_049.jpg,Original,Seller IBAN,GBO5YUTG50853913677557,,Missing Extraction
+invoice_049.jpg,Gray,Seller IBAN,GBO5YUTG50853913677557,,Missing Extraction
+invoice_049.jpg,Threshold,Seller IBAN,GBO5YUTG50853913677557,,Missing Extraction
+invoice_049.jpg,Adaptive,Invoice Number,19471831,,Missing Extraction
+invoice_049.jpg,Adaptive,Invoice Date,04/09/2014,,Missing Extraction
+invoice_049.jpg,Adaptive,Seller Tax ID,924-71-1106,,Missing Extraction
+invoice_049.jpg,Adaptive,Client Tax ID,922-72-5979,,Missing Extraction
+invoice_049.jpg,Adaptive,Seller IBAN,GBO5YUTG50853913677557,,Missing Extraction
+invoice_049.jpg,Adaptive,Net Worth,40677.81,7.78,Numeric / Amount Error
+invoice_049.jpg,Adaptive,VAT,4067.78,44.74,Numeric / Amount Error
+invoice_049.jpg,Adaptive,Gross Worth,44745.59,5.59,Numeric / Amount Error
+invoice_049.jpg,Denoise,Seller IBAN,GBO5YUTG50853913677557,,Missing Extraction
+invoice_049.jpg,Resize,Seller IBAN,GBO5YUTG50853913677557,,Missing Extraction
+invoice_049.jpg,Sharpen,Seller IBAN,GBO5YUTG50853913677557,,Missing Extraction
+invoice_050.jpg,Original,Net Worth,6236.77,,Missing Extraction
+invoice_050.jpg,Original,VAT,623.68,,Missing Extraction
+invoice_050.jpg,Original,Gross Worth,6860.45,,Missing Extraction
+invoice_050.jpg,Gray,Net Worth,6236.77,,Missing Extraction
+invoice_050.jpg,Gray,VAT,623.68,,Missing Extraction
+invoice_050.jpg,Gray,Gross Worth,6860.45,,Missing Extraction
+invoice_050.jpg,Adaptive,Invoice Number,12847181,,Missing Extraction
+invoice_050.jpg,Adaptive,Invoice Date,03/03/2012,,Missing Extraction
+invoice_050.jpg,Adaptive,Seller Tax ID,998-99-5253,,Missing Extraction
+invoice_050.jpg,Adaptive,Client Tax ID,911-82-7132,,Missing Extraction
+invoice_050.jpg,Adaptive,Net Worth,6236.77,,Missing Extraction
+invoice_050.jpg,Adaptive,VAT,623.68,,Missing Extraction
+invoice_050.jpg,Adaptive,Gross Worth,6860.45,,Missing Extraction
+invoice_050.jpg,Denoise,Net Worth,6236.77,,Missing Extraction
+invoice_050.jpg,Denoise,VAT,623.68,,Missing Extraction
+invoice_050.jpg,Denoise,Gross Worth,6860.45,,Missing Extraction
+invoice_050.jpg,Resize,Net Worth,6236.77,,Missing Extraction
+invoice_050.jpg,Resize,VAT,623.68,,Missing Extraction
+invoice_050.jpg,Resize,Gross Worth,6860.45,,Missing Extraction
+invoice_050.jpg,Sharpen,Net Worth,6236.77,,Missing Extraction
+invoice_050.jpg,Sharpen,VAT,623.68,,Missing Extraction
+invoice_050.jpg,Sharpen,Gross Worth,6860.45,,Missing Extraction

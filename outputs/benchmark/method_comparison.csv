@@ -1,0 +1,8 @@
+method,invoices_tested,correct_fields,evaluated_fields,aggregate_field_accuracy,character_accuracy,manual_review_proxy_rate,average_tesseract_confidence
+Threshold,50,379,400,94.75,95.06,5.25,89.13
+Denoise,50,371,400,92.75,93.76,7.25,90.23
+Gray,50,366,400,91.5,92.59,8.5,90.04
+Original,50,365,400,91.25,92.3,8.75,90.14
+Resize,50,349,400,87.25,88.25,12.75,86.03
+Sharpen,50,332,400,83.0,85.05,17.0,79.29
+Adaptive,50,87,400,21.75,26.12,78.25,40.86
