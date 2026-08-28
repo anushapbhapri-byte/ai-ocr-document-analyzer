@@ -1,172 +1,290 @@
+<div align="center">
+
 🔎 AI OCR Document Analyzer
 
-Intelligent Invoice Processing, OCR Benchmarking & Document Quality Analysis
+Intelligent Invoice Processing • OCR Benchmarking • Document Quality Analysis
 
-An end-to-end OCR-based invoice processing system that converts invoice images into structured, validated data and identifies invoices that may require manual review.
+<p>
+  <strong>An end-to-end OCR-based invoice processing system that converts invoice images into structured, validated data and identifies invoices that may require manual review.</strong>
+</p>
 
-This project combines Tesseract OCR, OpenCV image preprocessing, structured field extraction, validation, confidence analysis, benchmarking, error analysis, and batch processing.
+<p>
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Tesseract-OCR-4285F4?style=for-the-badge" alt="Tesseract OCR">
+  <img src="https://img.shields.io/badge/OpenCV-Image%20Processing-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
+  <img src="https://img.shields.io/badge/GUI-Tkinter-FFB000?style=for-the-badge" alt="Tkinter">
+</p>
 
-The main goal was not just to extract text from invoices, but to measure how reliable the extracted information is and understand where OCR errors occur.
+<p>
+  <img src="https://img.shields.io/badge/Invoices-50%20Noisy%20Samples-6A1B9A?style=flat-square" alt="50 noisy invoices">
+  <img src="https://img.shields.io/badge/Benchmark-7%20Preprocessing%20Methods-00897B?style=flat-square" alt="7 preprocessing methods">
+  <img src="https://img.shields.io/badge/Status-Portfolio%20Project-2E7D32?style=flat-square" alt="Portfolio project">
+</p>
+
+</div>
+
+🚀 What Is This Project?
+
+This project goes beyond basic OCR.
+
+It is a practical invoice-processing pipeline designed to answer two questions:
+
+Can the system extract invoice information automatically?
+
+and
+
+How reliable is that extracted information?
+
+The pipeline combines:
+
+Image preprocessing → OCR → field extraction → normalization → validation → confidence analysis → benchmark evaluation → error analysis → automated/manual-review decision
+
+The project was built around a controlled benchmark of 50 clean invoice images and 50 corresponding noisy invoice images, with manually verified ground truth used for evaluation.
 
 🎯 Why I Built This
 
-Invoice processing often involves manually reading documents, entering information into systems, and verifying extracted values.
+Manual invoice processing can involve repeatedly reading documents, entering values into systems, and checking whether extracted information is correct.
 
-I wanted to build a practical system that could automate as much of this process as possible while still keeping human review for cases where the extracted data may not be reliable.
+I wanted to build a system that could automate as much of this workflow as possible while still recognizing that not every OCR result should be trusted automatically.
 
-The system was designed to:
+The system is designed to:
 
-📄 Extract important invoice fields automatically
+Capability
 
-🖼️ Improve OCR results through image preprocessing
+Purpose
 
-✅ Validate extracted values
+📄 Invoice extraction
 
-📊 Measure OCR confidence
+Convert invoice images into structured fields
 
-🧪 Compare OCR results against verified ground truth
+🖼️ Image preprocessing
 
-🔍 Identify common OCR error patterns
+Improve OCR readability under degraded conditions
 
-🤖 Automatically accept reliable invoices
+🔤 OCR
 
-👥 Flag invoices requiring manual review
+Extract text using Tesseract
 
-📦 Process multiple invoices in batches
+🧩 Field extraction
 
-📑 Export results to CSV and Excel
+Convert OCR text into invoice attributes
 
-📋 What the System Extracts
+✅ Validation
 
-The current pipeline extracts structured invoice information including:
+Check extracted values against expected rules
+
+📊 Confidence analysis
+
+Identify potentially uncertain OCR output
+
+🧪 Benchmarking
+
+Compare preprocessing strategies objectively
+
+🔍 Error analysis
+
+Understand why extraction fails
+
+🤖 Review decision
+
+Separate automatically acceptable invoices from review cases
+
+📦 Batch processing
+
+Process multiple invoices in one run
+
+📑 Reporting
+
+Export structured results and analytics
+
+🏗️ System Architecture
+
+                         ┌───────────────────────┐
+                         │     Invoice Image     │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │ Image Preprocessing   │
+                         │  • Gray               │
+                         │  • Threshold          │
+                         │  • Adaptive           │
+                         │  • Denoise            │
+                         │  • Resize             │
+                         │  • Sharpen            │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │     Tesseract OCR     │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │ Structured Field      │
+                         │ Extraction            │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                         ┌───────────────────────┐
+                         │ Normalization         │
+                         └───────────┬───────────┘
+                                     │
+                                     ▼
+                    ┌────────────────────────────────┐
+                    │ Validation + Confidence        │
+                    │ Analysis                       │
+                    └───────────────┬────────────────┘
+                                    │
+                         ┌──────────┴──────────┐
+                         ▼                     ▼
+                ┌─────────────────┐   ┌─────────────────┐
+                │ Auto Accept     │   │ Manual Review   │
+                └────────┬────────┘   └────────┬────────┘
+                         │                     │
+                         └──────────┬──────────┘
+                                    ▼
+                         ┌───────────────────────┐
+                         │ Analytics / Export    │
+                         │ CSV • Excel • Graphs  │
+                         └───────────────────────┘
+
+🧾 Invoice Fields Extracted
+
+The current extraction pipeline works with these structured invoice fields:
+
+#
 
 Invoice Field
 
+1
+
 Invoice Number
+
+2
 
 Invoice Date
 
+3
+
 Seller Tax ID
+
+4
 
 Client Tax ID
 
+5
+
 Seller IBAN
+
+6
 
 Net Worth
 
+7
+
 VAT
+
+8
 
 Gross Worth
 
-The extracted values go through normalization and validation before the system determines whether the result can be accepted automatically or should be reviewed.
+The extracted values are normalized and validated before the system makes a review decision.
 
-🔄 How It Works
+🖼️ OCR Preprocessing Benchmark
 
-                    ┌─────────────────────┐
-                    │    Invoice Image    │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Image Preprocessing │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   Tesseract OCR     │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Structured Field    │
-                    │ Extraction          │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Field Normalization │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Validation + OCR    │
-                    │ Confidence          │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   Review Decision   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ CSV / Excel /       │
-                    │ Analytics           │
-                    └─────────────────────┘
+Rather than assuming that one preprocessing technique is always best, I benchmarked multiple strategies.
 
-I evaluated multiple preprocessing strategies rather than assuming that one preprocessing technique would always perform best.
+Seven preprocessing methods
 
-🖼️ Image Preprocessing
+Method
 
-The benchmark compares seven preprocessing methods:
+Description
 
-Original
+🧾 Original
 
-Gray
+OCR on the original image
 
-Threshold
+⚫ Gray
 
-Adaptive
+Grayscale conversion
 
-Denoise
+◼️ Threshold
 
-Resize
+Threshold-based binarization
 
-Sharpen
+🌓 Adaptive
 
-The purpose of this comparison was to determine which preprocessing approach produced the most accurate structured invoice data on the benchmark dataset.
+Adaptive thresholding
 
-🧪 Benchmark
+🧹 Denoise
 
-I created a controlled benchmark using:
+Noise reduction
+
+🔍 Resize
+
+Image scaling before OCR
+
+✨ Sharpen
+
+Sharpening to improve text edges
+
+This makes the project an OCR evaluation system, rather than simply an OCR script.
+
+🧪 Controlled Benchmark
+
+The benchmark uses:
 
 50 clean invoice images
 
 50 corresponding noisy invoice images
 
-A manually verified ground-truth CSV
+Manually verified ground truth
 
-The ground-truth data was created from the clean invoice images and manually verified before evaluation.
+Multiple preprocessing strategies
 
-Important: OCR predictions from the noisy images were not used as ground truth.
+Field-level and character-level evaluation
 
-This provides a controlled way to evaluate how different preprocessing methods affect invoice extraction accuracy.
+Benchmark design
 
-📊 Evaluation Metrics
+Original Dataset
+      │
+      ▼
+Batch1_1
+      │
+      ▼
+First 50 Invoice Images
+      │
+      ├─────────────────────┐
+      │                     │
+      ▼                     ▼
+Clean Reference       Synthetic Noise /
+Ground Truth          Degradation
+      │                     │
+      │                     ▼
+      │               50 Noisy Invoices
+      │                     │
+      └──────────┬──────────┘
+                 ▼
+            OCR Pipeline
+                 │
+                 ▼
+        Preprocessing Benchmark
+                 │
+                 ▼
+       Accuracy + Error Analysis
 
-Field Accuracy
+Important evaluation principle
 
-Field accuracy uses exact normalized matching between the predicted value and the verified ground-truth value.
+OCR predictions from noisy images are not used as ground truth.
 
-Example:
+The clean/reference data is used to establish the verified expected values, while noisy images are processed independently by the OCR pipeline.
 
-Ground Truth: INV-001
-Prediction:   INV-001
-Result:       Correct
+📊 Benchmark Results
 
-Character Accuracy
+The current benchmark evaluated 50 noisy invoices.
 
-Character accuracy measures similarity between predicted and ground-truth field text.
-
-Manual-Review Proxy
-
-The project also calculates a manual-review proxy based on incorrect or missing fields.
-
-This is a benchmark metric rather than a measurement of actual human labor time.
-
-📈 Benchmark Results
-
-The current benchmark evaluated all 50 noisy invoices.
+<div align="center">
 
 Metric
 
@@ -174,39 +292,53 @@ Original
 
 Threshold
 
-Field Accuracy
+🎯 Field Accuracy
 
 91.25%
 
 94.75%
 
-Character Accuracy
+🔤 Character Accuracy
 
 92.30%
 
 95.06%
 
-Manual-Review Proxy
+👥 Manual-Review Proxy
 
 8.75%
 
 5.25%
 
-Key Results
+</div>
 
-📈 Field accuracy improved by 3.50 percentage points
+Key findings
 
-📈 Character accuracy improved by 2.76 percentage points
+Finding
 
-📉 Manual-review proxy decreased by 3.50 percentage points
+Change
 
-🏆 Threshold preprocessing achieved the highest overall field accuracy
+📈 Field accuracy
+
++3.50 percentage points
+
+📈 Character accuracy
+
++2.76 percentage points
+
+📉 Manual-review proxy
+
+−3.50 percentage points
+
+🏆 Best overall field accuracy
+
+Threshold preprocessing
 
 These results are specific to the controlled benchmark dataset and should not be interpreted as guaranteed performance on arbitrary real-world invoices.
 
-📋 Field-Level Results
+📋 Field-Level Benchmark
 
-The benchmark also helped identify which invoice fields benefit most from preprocessing.
+The benchmark also evaluates individual invoice fields.
 
 Field
 
@@ -268,21 +400,21 @@ Amount Fields
 
 100%
 
-Key Observation
+🔎 What this shows
 
-Preprocessing did not improve every field equally.
+Preprocessing does not improve every field equally.
 
-Threshold preprocessing performed particularly well on monetary fields, while some identifier fields remained more challenging.
+In this benchmark, threshold preprocessing performed particularly well for monetary fields, while identifier fields such as IBAN remained more challenging.
+
+That distinction is important because an overall OCR score can hide field-specific weaknesses.
 
 🔍 Error Analysis
 
-I added a separate error-analysis step to understand why OCR results fail.
+Accuracy tells us what happened.
 
-Run
+Error analysis helps explain why it happened.
 
-python error_analysis.py
-
-The analysis categorizes field-level errors into:
+The project includes a dedicated error-analysis step that categorizes field-level mismatches into:
 
 ❌ Missing Extraction
 
@@ -292,135 +424,208 @@ The analysis categorizes field-level errors into:
 
 ⚠️ Other Field Mismatch
 
-Generated Outputs
+Run error analysis
+
+python error_analysis.py
+
+Generated outputs
 
 outputs/benchmark/error_details.csv
 outputs/benchmark/error_category_summary.csv
 outputs/benchmark/field_error_summary.csv
 outputs/benchmark/error_category_comparison.png
 
-This moves the project beyond simply reporting an accuracy percentage and allows investigation of the actual failure modes of the OCR pipeline.
+This allows the pipeline to move from:
 
-📦 Batch Processing
+"OCR accuracy is X%"
 
-The project also includes a batch invoice processor.
+to:
 
-Invoices can be placed in:
+"These are the fields and error types responsible for the failures."
+
+📦 Batch Invoice Processing
+
+The project includes a batch-processing workflow for running the pipeline over multiple invoices.
+
+Place invoices inside:
 
 data/batch_invoices/
 
-Run
+Then run:
 
 python batch_processor.py
 
-The processor reports:
+Batch KPIs
 
 KPI
 
-Purpose
+What it measures
 
-Total invoices
+📄 Total invoices
 
-Total documents processed
+Documents processed
 
-Automatically accepted invoices
+🤖 Auto accepted
 
-Documents accepted by the automated workflow
+Documents accepted automatically
 
-Manual-review invoices
+👥 Manual review
 
 Documents routed for review
 
-Processing errors
+❌ Processing errors
 
 Documents that failed processing
 
-Straight-through processing rate
+⚡ Straight-through rate
 
-Percentage processed without manual review
+Share processed without manual review
 
-Manual-review rate
+⏱️ Average processing time
 
-Percentage requiring review
+Average time per invoice
 
-Average processing time
-
-Average processing time per invoice
-
-Results are exported to:
+Output files
 
 outputs/batch/batch_invoice_results.csv
 outputs/batch/batch_invoice_results.xlsx
 
-📊 Current 50-Invoice Batch Run
+📈 50-Invoice Batch Run
 
-I tested the batch workflow on all 50 noisy invoices.
+The current batch workflow was tested on 50 noisy invoices.
 
-Total invoices          : 50
-Auto accepted           : 37
-Manual review           : 13
-Processing errors       : 0
-Straight-through rate   : 74.00%
-Manual-review rate      : 26.00%
-Average processing time : 4.426 seconds/invoice
+<div align="center">
 
-Operational Interpretation
+Operational Metric
 
-The batch workflow demonstrates:
+Result
 
-Invoice → OCR → Extraction → Validation → Automated Acceptance / Manual Review
+📄 Total invoices
 
-The straight-through rate is specific to the current dataset and review rules.
+50
 
-📊 Confidence & Validation
+🤖 Auto accepted
 
-The system keeps OCR confidence separate from factual accuracy.
+37
 
-Tesseract provides word-level confidence, which is useful for identifying potentially uncertain OCR output.
+👥 Manual review
+
+13
+
+❌ Processing errors
+
+0
+
+⚡ Straight-through rate
+
+74.00%
+
+👥 Manual-review rate
+
+26.00%
+
+⏱️ Average processing time
+
+4.426 sec/invoice
+
+</div>
+
+Operational flow
+
+50 Invoices
+     │
+     ▼
+Batch Processing
+     │
+     ▼
+OCR + Extraction + Validation
+     │
+     ├───────────────┐
+     ▼               ▼
+37 Auto Accepted   13 Manual Review
+     │               │
+     └───────┬───────┘
+             ▼
+        Final Results
+
+The straight-through rate is specific to the current dataset and the project's review rules.
+
+🎯 Confidence Is Not Accuracy
+
+One of the important design decisions in this project is keeping OCR confidence separate from factual correctness.
+
+Tesseract provides word-level confidence values. These can help identify potentially uncertain OCR output.
 
 However:
 
 OCR Confidence ≠ Factual Accuracy
 
-A value can have high OCR confidence and still be incorrect.
+A value can have a high OCR confidence score and still be wrong.
 
-For this reason, the benchmark evaluates predictions independently against manually verified ground truth.
+Therefore, the project evaluates OCR predictions independently against manually verified ground truth.
 
-The validation layer also checks whether extracted values follow expected formats and rules.
+This distinction is particularly important for invoice automation because a confidently extracted wrong amount can be more damaging than an obviously low-confidence result.
+
+✅ Validation Layer
+
+The validation stage checks extracted values before the final review decision.
+
+The workflow is:
+
+OCR Text
+   │
+   ▼
+Field Extraction
+   │
+   ▼
+Normalization
+   │
+   ▼
+Validation
+   │
+   ▼
+Confidence / Quality Assessment
+   │
+   ▼
+Accept OR Manual Review
+
+The goal is not simply to extract something from every document.
+
+The goal is to determine whether the extracted information is reliable enough for automated handling.
 
 🖥️ Desktop Application
 
-The project includes a Tkinter desktop GUI.
+The repository also contains a Tkinter-based desktop application.
 
-Run
+Run the GUI
 
 python gui_app.py
 
-The GUI supports:
+GUI capabilities
 
-📤 Invoice image upload
+📤 Upload invoice images
 
-🖼️ Image viewing
+🖼️ View invoice images
 
-🔤 OCR processing
+🔤 Run OCR
 
-🔄 Preprocessing comparison
+🔄 Compare preprocessing approaches
 
-📋 Structured field extraction
+📋 Display structured invoice fields
 
-✅ Validation status
+✅ Show validation status
 
-📊 Confidence information
+📊 Display confidence information
 
-💾 Saving results
+💾 Save results
 
-📑 Excel export
+📑 Export results to Excel
 
-📈 Analytics & Dashboard
+📊 Analytics & Dashboard
 
-The project includes a dashboard component for presenting OCR benchmark and operational information.
+The project includes analytics and dashboard components intended to answer practical business questions:
 
-The dashboard is designed around recruiter/business-facing questions such as:
+Operational questions
 
 How many invoices were processed?
 
@@ -428,103 +633,131 @@ How many were automatically accepted?
 
 How many required manual review?
 
-Which preprocessing method performed best?
+Were there any processing failures?
 
-Which invoice fields are most difficult to extract?
+How long does processing take?
 
-What are the major OCR error categories?
+Quality questions
 
-How does processing performance vary across the benchmark?
+Which preprocessing method performs best?
 
-🗃️ Dataset
+Which invoice fields are hardest to extract?
 
-The project uses synthetic/demo invoice images from the Kaggle dataset:
+What types of OCR errors occur most frequently?
 
-High Quality Invoice Images for OCR
+Does preprocessing improve extraction quality?
 
-Kaggle:
+Where should human review be introduced?
 
-https://www.kaggle.com/datasets/osamahosamabdellatif/high-quality-invoice-images-for-ocr
+This makes the project relevant not only as an OCR implementation, but also as a document-processing and decision-support workflow.
 
-Dataset Selection
+🗂️ Project Structure
 
-For this project:
+ai-ocr-document-analyzer/
+│
+├── 📁 data/
+│   ├── batch_invoices/
+│   └── ...
+│
+├── 📁 outputs/
+│   ├── benchmark/
+│   ├── batch/
+│   └── ...
+│
+├── 📁 tests/
+│   └── test_project.py
+│
+├── 🐍 analytics.py
+├── 🐍 batch_processor.py
+├── 🐍 benchmark_evaluation.py
+├── 🐍 confidence_engine.py
+├── 🐍 create_ground_truth.py
+├── 🐍 dashboard.py
+├── 🐍 data_extractor.py
+├── 🐍 error_analysis.py
+├── 🐍 graph_engine.py
+├── 🐍 gui_app.py
+├── 🐍 main.py
+├── 🐍 ocr_engine.py
+├── 🐍 preprocess.py
+├── 🐍 validation_engine.py
+│
+├── 📄 requirements.txt
+├── 📄 .gitignore
+└── 📄 README.md
 
-Source: Batch1_1
+🧰 Tech Stack
 
-Selected images: First 50 invoice images
+<div align="center">
 
-Clean images: Used to establish the verified reference data
+Technology
 
-Noisy images: Generated by applying synthetic noise/degradation for OCR evaluation
+Role
 
-Kaggle Invoice Dataset
-          │
-          ▼
-       Batch1_1
-          │
-          ▼
- First 50 Invoice Images
-          │
-          ├───────────────┐
-          │               │
-          ▼               ▼
-   Clean Reference    Noise / Degradation
-          │               │
-          │               ▼
-          │        50 Noisy Invoices
-          │               │
-          └───────┬───────┘
-                  ▼
-          OCR Benchmark
-                  │
-                  ▼
-       Accuracy + Error Analysis
+🐍 Python
 
-The noisy images were created as part of this project to evaluate OCR robustness under degraded document conditions.
+Core implementation
 
-Dataset attribution: The original invoice images come from the Kaggle dataset linked above, and additional synthetic noise/degradation was introduced for this project's evaluation. Please refer to the original dataset page for the applicable license and attribution requirements.
+🔤 Tesseract OCR
 
-⚙️ Running the Project
+Text recognition
+
+👁️ OpenCV
+
+Image preprocessing
+
+🖥️ Tkinter
+
+Desktop GUI
+
+📊 Pandas
+
+Data processing and analysis
+
+📈 Matplotlib
+
+Benchmark and analytics visualizations
+
+📑 Excel / CSV
+
+Result export
+
+🧪 Pytest
+
+Testing
+
+</div>
+
+⚙️ Installation & Setup
 
 1. Clone the repository
 
-git clone <your-repository-url>
-cd OCR_Project
-
-Replace <your-repository-url> with the URL of the GitHub repository.
+git clone https://github.com/anushabhapri-byte/ai-ocr-document-analyzer.git
+cd ai-ocr-document-analyzer
 
 2. Create a virtual environment
 
 python -m venv .venv
 
-Activate it:
+3. Activate the environment
+
+Windows PowerShell
 
 .\.venv\Scripts\Activate.ps1
 
-3. Install dependencies
+4. Install Python dependencies
 
 python -m pip install -r requirements.txt
 
-4. Install Tesseract OCR
+5. Install Tesseract OCR
 
 Tesseract is an external dependency and must be installed separately.
 
-Verify the installation:
+After installation, verify that Tesseract is available to the project.
 
-tesseract --version
+▶️ Running the Project
 
-If Tesseract is not available through PATH, configure the executable through the TESSERACT_CMD environment variable.
-
-Example:
-
-$env:TESSERACT_CMD="C:\Path\To\tesseract.exe"
-
-No machine-specific Tesseract path is hard-coded into the project.
-
-▶️ Running the Main Application
-
-Command-line invoice processing
+Main pipeline
 
 python main.py
 
@@ -532,339 +765,220 @@ Desktop GUI
 
 python gui_app.py
 
-🧪 Reproducing the Benchmark
+Batch processing
 
-The benchmark can be reproduced using:
+python batch_processor.py
+
+Benchmark evaluation
 
 python benchmark_evaluation.py
 
-The evaluation uses the 50 noisy invoice images and their manually verified ground-truth records.
-
-The benchmark generates:
-
-outputs/benchmark/
-
-including:
-
-benchmark_comparison.csv
-detailed_field_results.csv
-field_comparison.csv
-method_comparison.csv
-
-as well as benchmark visualizations.
-
-🔬 Running Error Analysis
-
-After benchmark results have been generated:
+Error analysis
 
 python error_analysis.py
 
-This produces:
+Tests
 
-error_details.csv
-error_category_summary.csv
-field_error_summary.csv
-error_category_comparison.png
+python -m pytest
 
-inside:
+🧪 Testing
 
-outputs/benchmark/
+The repository includes automated tests under:
 
-🧪 Running the Tests
-
-The project includes an automated PyTest test suite covering core functionality such as:
-
-Image preprocessing
-
-Field normalization
-
-Invoice-number extraction and validation
-
-Amount and VAT validation
-
-OCR confidence handling
-
-Manual-review logic
-
-Invoice field extraction
-
-Benchmark utilities
+tests/test_project.py
 
 Run:
 
 python -m pytest
 
-The test suite is included in the repository so the core functionality can be checked from a clean Python environment.
+The test suite helps verify that the project's processing components continue to behave as expected as the pipeline evolves.
 
-📂 Project Structure
+🗃️ Dataset & Data Generation
 
-OCR_Project/
-│
-├── data/
-│   ├── benchmark/
-│   │   ├── images/
-│   │   ├── noisy_images/
-│   │   └── ground_truth.csv
-│   │
-│   ├── batch_invoices/
-│   └── invoice.jpg
-│
-├── outputs/
-│   ├── benchmark/
-│   └── batch/
-│
-├── tests/
-│   └── test_project.py
-│
-├── analytics.py
-├── batch_processor.py
-├── benchmark_evaluation.py
-├── confidence_engine.py
-├── create_ground_truth.py
-├── data_extractor.py
-├── dashboard.py
-├── error_analysis.py
-├── graph_engine.py
-├── gui_app.py
-├── main.py
-├── ocr_engine.py
-├── preprocess.py
-├── validation_engine.py
-│
-├── requirements.txt
-├── .gitignore
-└── README.md
-
-🛠️ Technologies Used
-
-Technology
-
-Purpose
-
-Python
-
-Application and processing logic
-
-Tesseract OCR
-
-OCR engine
-
-pytesseract
-
-Python interface for Tesseract
-
-OpenCV
-
-Image preprocessing
-
-NumPy
-
-Numerical and image operations
-
-Pillow
-
-Image handling
-
-Tkinter
-
-Desktop GUI
-
-OpenPyXL
-
-Excel export
-
-Matplotlib
-
-Benchmark visualization
-
-pytest
-
-Automated testing
-
-Git / GitHub
-
-Version control
-
-💼 Business Perspective
-
-The project is designed around a practical operational question:
-
-Can this invoice be processed automatically, or should it be reviewed by a human?
-
-This creates a connection between AI output and business operations.
-
-Instead of treating OCR as simply:
-
-Image → Text
-
-the project evaluates:
-
-Image
-  ↓
-OCR
-  ↓
-Structured Data
-  ↓
-Validation
-  ↓
-Confidence
-  ↓
-Business Decision
-  ↓
-Automated Processing / Manual Review
-
-This makes the project relevant to areas such as:
-
-🧾 Invoice processing
-
-💰 Accounts payable
-
-📄 Document digitization
-
-🔄 Data-entry automation
-
-🤖 Intelligent document processing
-
-📊 Business process analytics
-
-🧠 Key Takeaways
-
-Building this project helped me understand that OCR accuracy is not only about the OCR engine itself.
-
-Image quality, preprocessing, field extraction, validation, confidence handling, and downstream business rules all affect the reliability of the final structured data.
-
-The benchmark also showed that improving overall OCR performance does not necessarily mean improving every individual field.
-
-This led me to treat invoice OCR as a combination of:
-
-OCR
- +
-Data Quality
- +
-Validation
- +
-Automation
- +
-Analytics
-
-rather than simply a text-recognition problem.
-
-⚠️ Known Limitations
-
-This project is currently evaluated on a controlled dataset and is not intended to claim production-level accuracy for arbitrary invoice formats.
-
-Known limitations include:
-
-Different invoice layouts may produce different results.
-
-OCR performance depends on image quality and document structure.
-
-Seller IBAN extraction is currently a weaker area compared with several other fields.
-
-The manual-review percentage is a benchmark proxy and not a measured labor-time saving.
-
-Tesseract confidence should not be interpreted as factual accuracy.
-
-Benchmark results are specific to the current dataset and configuration.
-
-Tesseract must be installed separately.
-
-These limitations are intentionally documented because reliable evaluation is more important than presenting an inflated performance number.
-
-🚀 What I Would Improve Next
-
-The next technical improvement I would focus on is:
-
-Seller IBAN Extraction
-
-The benchmark currently shows that IBAN extraction performs worse than several other invoice fields.
-
-Rather than changing the benchmark or relaxing validation rules simply to increase the score, the goal would be to:
-
-Improve the extraction logic
-
-Keep the same benchmark
-
-Rerun the evaluation
-
-Compare the new results against the current baseline
-
-Determine whether the improvement is actually measurable
-
-This keeps the improvement process data-driven and reproducible.
-
-🎯 Project Positioning
-
-This project is an:
-
-AI-assisted Intelligent Document Processing / OCR Pipeline
-
-I did not train a new OCR model from scratch.
-
-Instead, I built an application layer around an existing OCR engine and focused on making its output more useful for a business workflow through:
-
-Structured extraction
-
-Data normalization
-
-Validation
-
-OCR confidence analysis
-
-Manual-review routing
-
-Preprocessing comparison
-
-Benchmarking
-
-Error analysis
-
-Batch processing
-
-CSV / Excel reporting
-
-Automated testing
-
-The focus of the project is applying OCR and AI-assisted automation to a practical document-processing problem.
-
-⭐ Project Highlights
-
-╔══════════════════════════════════════════════════════════╗
-║             AI OCR DOCUMENT ANALYZER                     ║
-╠══════════════════════════════════════════════════════════╣
-║                                                          ║
-║  🖼️  Image Preprocessing                                 ║
-║  🔤  Tesseract OCR                                       ║
-║  📋  Structured Field Extraction                         ║
-║  ✅  Validation                                           ║
-║  📊  Confidence Analysis                                 ║
-║  🧪  Benchmarking                                         ║
-║  🔍  Error Analysis                                       ║
-║  📦  Batch Processing                                     ║
-║  📈  Analytics                                            ║
-║  🖥️  Desktop GUI                                         ║
-║  👥  Manual-Review Routing                                ║
-║  🧪  Automated Testing                                   ║
-║                                                          ║
-╚══════════════════════════════════════════════════════════╝
-
-👩‍💻 Author
-
-Anusha Bhapri
-
-Computer Science & Engineering
-MBA – Artificial Intelligence
-
-📌 Dataset Attribution
-
-Invoice images used in this project were obtained from the Kaggle dataset:
+The project uses synthetic/demo invoice images from the Kaggle dataset:
 
 High Quality Invoice Images for OCR
 
 https://www.kaggle.com/datasets/osamahosamabdellatif/high-quality-invoice-images-for-ocr
 
-The project uses the first 50 invoice images from Batch1_1.
+Dataset selection
 
-The selected images were used as the clean reference set, and corresponding noisy/degraded versions were created as part of the project's OCR robustness evaluation.
+For this project:
 
-Please refer to the original Kaggle dataset page for the current licensing and attribution requirements.
+Source: Batch1_1
+
+Selected: First 50 invoice images
+
+Clean images: Used to establish verified reference data
+
+Noisy images: Generated by applying synthetic noise/degradation as part of this project
+
+Data flow
+
+Kaggle Dataset
+      │
+      ▼
+   Batch1_1
+      │
+      ▼
+First 50 Images
+      │
+      ├─────────────────┐
+      │                 │
+      ▼                 ▼
+Clean Images       Synthetic Noise
+      │                 │
+      ▼                 ▼
+Ground Truth      Noisy Invoices
+      │                 │
+      └────────┬────────┘
+               ▼
+          OCR Evaluation
+
+Dataset attribution: The original invoice images come from the Kaggle dataset linked above. Synthetic noise/degradation was introduced for this project's evaluation. Please refer to the original dataset page for the applicable license and attribution requirements.
+
+📌 Important Limitations
+
+This project is a controlled OCR benchmark and portfolio implementation, not a production invoice-processing platform.
+
+Current limitations
+
+The benchmark contains 50 selected invoice images.
+
+The invoices are synthetic/demo documents from the referenced Kaggle dataset.
+
+Noise/degradation is synthetically introduced.
+
+Benchmark results may not generalize to arbitrary real-world invoices.
+
+Tesseract-based OCR can struggle with complex layouts, unusual fonts, severe degradation, and ambiguous characters.
+
+The manual-review rate depends on the project's current validation/review rules.
+
+Processing time depends on the local machine and environment.
+
+These limitations are intentionally documented because benchmark transparency is as important as reporting a high accuracy number.
+
+💡 What Makes This More Than an OCR Script?
+
+A simple OCR project might look like:
+
+Image → OCR → Text
+
+This project expands that into:
+
+Image
+  ↓
+Preprocessing
+  ↓
+OCR
+  ↓
+Field Extraction
+  ↓
+Normalization
+  ↓
+Validation
+  ↓
+Confidence Analysis
+  ↓
+Benchmarking
+  ↓
+Error Analysis
+  ↓
+Automated Decision
+  ↓
+Human Review When Needed
+  ↓
+Analytics + Export
+
+The focus is therefore on reliability, evaluation, and operational decision-making, not just text extraction.
+
+📈 Project Highlights
+
+<div align="center">
+
+🔢 50
+
+Noisy invoices benchmarked
+
+🧪 7
+
+Preprocessing strategies evaluated
+
+🎯 94.75%
+
+Best field accuracy in current benchmark
+
+⚡ 74%
+
+Straight-through rate in current 50-invoice batch
+
+❌ 0
+
+Processing errors in current batch run
+
+</div>
+
+🧠 Key Learning
+
+The most important takeaway from this project was:
+
+Better OCR does not simply mean extracting more text. It means knowing when the extracted information can be trusted.
+
+That led to the addition of:
+
+benchmarking → ground truth → validation → confidence analysis → error analysis → manual-review routing
+
+This makes the system more aligned with how document-processing automation would need to operate in a real business environment.
+
+🔮 Future Improvements
+
+Potential next steps include:
+
+📐 Layout-aware document understanding
+
+🤖 Transformer-based OCR/document models
+
+🧾 More diverse invoice templates
+
+🌍 Multi-language invoice support
+
+🧠 Improved field-level confidence scoring
+
+🔁 Human-in-the-loop feedback
+
+🌐 Web-based deployment
+
+🐳 Dockerized deployment
+
+☁️ Cloud-based document processing
+
+📊 Larger benchmark datasets
+
+🔬 More robust noise and degradation simulation
+
+⚙️ Production-grade logging and monitoring
+
+👩‍💻 Project Author
+
+<div align="center">
+
+Anusha Bhapri
+
+Computer Science & Engineering + MBA in Artificial Intelligence
+
+AI • Data Analytics • Business Analysis • Intelligent Document Processing
+
+</div>
+
+⭐ If You Found This Useful
+
+If this project is useful or interesting, consider giving the repository a star and exploring the implementation.
+
+<div align="center">
+
+AI OCR Document Analyzer
+
+From invoice image → structured data → quality evaluation → business decision
+
+</div>
