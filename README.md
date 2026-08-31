@@ -80,30 +80,7 @@ The extracted values go through **normalization and validation** before the syst
 
 ## How It Works
 
-```text
-Invoice Image
-      |
-      v
-Image Preprocessing
-      |
-      v
-Tesseract OCR
-      |
-      v
-Structured Field Extraction
-      |
-      v
-Field Normalization
-      |
-      v
-Validation + OCR Confidence
-      |
-      v
-Review Decision
-      |
-      v
-CSV / Excel / Analytics
-```
+![AI-Assisted OCR Invoice Processing Pipeline](a_clean_infographic_documentation_style_diagram.png)
 
 I evaluated multiple preprocessing strategies rather than assuming that one preprocessing technique would always perform best.
 
