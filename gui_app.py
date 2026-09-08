@@ -283,18 +283,26 @@ class OCRApp:
         ).pack(side="left", padx=8)
 
     def create_textbox(self, parent, height):
-        frame = tk.Frame(parent)
+        frame = tk.Frame(parent, bg="#1e1e1e")
         frame.pack(fill="both", expand=True, pady=5)
 
         scrollbar = tk.Scrollbar(frame)
         scrollbar.pack(side="right", fill="y")
 
-        text = tk.Text(frame, height=height,
-                       bg="#2d2d2d", fg="white",
-                       insertbackground="white",
-                       yscrollcommand=scrollbar.set)
+        text = tk.Text(
+            frame,
+            height=height,
+            wrap="none",
+            font=("Consolas", 10),
+            bg="#2d2d2d",
+            fg="white",
+            insertbackground="white",
+            padx=5,
+            pady=5,
+            yscrollcommand=scrollbar.set
+        )
 
-        text.pack(fill="both", expand=True)
+        text.pack(side="left", fill="both", expand=True)
         scrollbar.config(command=text.yview)
 
         return text
@@ -439,7 +447,6 @@ class OCRApp:
     def get_validation_reason(self, field, value, validation):
         """Return a user-friendly explanation for an invalid field."""
 
-        # If validation_engine already provides a reason, use it.
         reason = validation.get("reason")
 
         if reason:
@@ -448,60 +455,47 @@ class OCRApp:
         field_lower = field.lower()
         value = str(value).strip()
 
-        if field_lower == "vehicle number":
-            return (
-                "Invalid vehicle number format. "
-                "Expected a valid vehicle registration number, "
-                "for example KA01AB1234."
-            )
-
-        if field_lower == "total amount":
-            return (
-                "Numeric value expected. "
-                "Enter the total amount as a number."
-            )
-
-        if field_lower == "ifsc":
-            return (
-                "Invalid IFSC format. "
-                "Expected an 11-character IFSC code."
-            )
-
-        if field_lower == "gstin":
-            return (
-                "Invalid GSTIN format. "
-                "Expected a valid 15-character GSTIN."
-            )
-
         if field_lower == "invoice date":
             return (
                 "Invalid invoice date format. "
-                "Expected a date such as 22-Apr-25."
+                "Please check the extracted invoice date."
             )
 
         if field_lower == "invoice number":
             return (
                 "Invalid invoice number format. "
-                "Please check the invoice number."
+                "Please check the extracted invoice number."
             )
 
-        if field_lower == "account number":
+        if field_lower in (
+            "seller tax id",
+            "client tax id",
+        ):
             return (
-                "Invalid account number. "
-                "A numeric account number is expected."
+                "Invalid Tax ID format. "
+                "Please check the extracted Tax ID."
             )
 
-        if field_lower == "bank":
+        if field_lower == "seller iban":
             return (
-                "Bank name could not be validated "
-                "against the supported bank list."
+                "Invalid IBAN format. "
+                "Please check the extracted Seller IBAN."
+            )
+
+        if field_lower in (
+            "net worth",
+            "vat",
+            "gross worth",
+        ):
+            return (
+                "A numeric monetary value is expected. "
+                "Please check the extracted amount."
             )
 
         return (
             f"The extracted value '{value}' does not "
             f"match the expected format for {field}."
         )
-
 
     def upload_image(self):
         path = filedialog.askopenfilename()
@@ -515,6 +509,17 @@ class OCRApp:
         self.root.update()
 
         self.image = cv2.imread(path)
+
+        if self.image is None:
+            messagebox.showerror(
+                "Image Error",
+                "The selected image could not be read."
+            )
+            self.status_label.config(
+                text="Ready"
+            )
+            self.progress["value"] = 0
+            return
 
         methods = {
             "Original": self.image,
@@ -628,48 +633,59 @@ class OCRApp:
             # --------------------------------------------------------
             # FIELD CONFIDENCE
             # --------------------------------------------------------
-            # confidence_engine.analyze_fields() expects the ACTUAL
-            # Tesseract word-level OCR data so it can match each
-            # extracted field to the OCR words that produced it.
-            #
-            # Do NOT pass one overall/average confidence here.
-            # That would make field-level confidence meaningless.
+            # Pass ACTUAL Tesseract word-level OCR data.
+            # confidence_engine.py matches each extracted value to
+            # OCR words and uses their real confidence values.
             # --------------------------------------------------------
 
             confidence_results = analyze_fields(
                 invoice_data,
                 best_ocr_words
             )
+
             self.confidence_results = confidence_results
-            # Validate extracted invoice fields
+
+            # Validation is separate from OCR confidence.
             validation_results = {}
 
             for field, value in invoice_data.items():
-                validation_results[field] = validate_field(field, value)
+                validation_results[field] = validate_field(
+                    field,
+                    value
+                )
 
-            # Table header
+            manual_review_count = 0
+
             self.data_box.insert(
                 tk.END,
-                    f"{'FIELD':<22}"
-                    f"{'EXTRACTED VALUE':<32}"
-                    f"{'CONFIDENCE':<10}"
-                    f"{'STATUS':<12}\n"
-                )
+                f"{'FIELD':<20}"
+                f"{'EXTRACTED VALUE':<30}"
+                f"{'CONF.':<12}"
+                f"{'STATUS':<14}\n"
+            )
+
             self.data_box.insert(
                 tk.END,
                 "-" * 76 + "\n"
             )
 
-            manual_review_count = 0
-
             for key, result in confidence_results.items():
 
-                value = str(result.get("value", ""))
+                full_value = str(
+                    result.get("value", "")
+                )
 
-                # Preserve unavailable confidence as None/N/A.
-                # Do NOT convert None to 0% because 0% implies a
-                # measured OCR confidence, which it is not.
-                raw_confidence = result.get("confidence")
+                display_value = full_value
+
+                if len(display_value) > 28:
+                    display_value = (
+                        display_value[:25]
+                        + "..."
+                    )
+
+                raw_confidence = result.get(
+                    "confidence"
+                )
 
                 if raw_confidence is None:
                     confidence = None
@@ -677,96 +693,123 @@ class OCRApp:
                     try:
                         confidence = max(
                             0,
-                            min(round(float(raw_confidence)), 100)
+                            min(
+                                round(float(raw_confidence)),
+                                100
+                            )
                         )
-                    except (TypeError, ValueError):
+                    except (
+                        TypeError,
+                        ValueError
+                    ):
                         confidence = None
-                # Keep long values from destroying the table layout
-                if len(value) > 30:
-                    value = value[:27] + "..."
 
-                validation = validation_results.get(key, {})
-                is_valid = validation.get("valid", True)
+                validation = validation_results.get(
+                    key,
+                    {}
+                )
+
+                is_valid = validation.get(
+                    "valid",
+                    True
+                )
 
                 if not is_valid:
                     review = "⚠ INVALID"
                     manual_review_count += 1
 
-                    reason = self.get_validation_reason(
-                        key,
-                        value,
-                        validation
+                    reason = (
+                        self.get_validation_reason(
+                            key,
+                            full_value,
+                            validation
+                        )
                     )
 
-                    self.data_box.insert(
-                        tk.END,
-                        f"{key:<22}"
-                        f"{value:<32}"
-                        f"{confidence:>3}%      "
-                        f"{review:<12}"
+                elif confidence is None:
+                    review = "⚠ OCR N/A"
+                    manual_review_count += 1
+
+                    reason = (
+                        "The extracted value was not reliably matched "
+                        "to a Tesseract OCR word. Manual verification "
+                        "is recommended."
                     )
 
+                elif result.get(
+                    "review",
+                    False
+                ):
+                    review = "⚠ LOW OCR"
+                    manual_review_count += 1
+
+                    reason = (
+                        "OCR confidence is low for this field. "
+                        "Manual verification is recommended."
+                    )
+
+                else:
+                    review = "✓ OK"
+                    reason = ""
+
+                confidence_display = (
+                    "N/A"
+                    if confidence is None
+                    else f"{confidence}%"
+                )
+
+                self.data_box.insert(
+                    tk.END,
+                    f"{key:<20}"
+                    f"{display_value:<30}"
+                    f"{confidence_display:<12}"
+                    f"{review:<14}"
+                )
+
+                if review != "✓ OK":
                     info_button = tk.Button(
                         self.data_box,
                         text="?",
-                        command=lambda f=key, v=value, r=reason:
-                            self.show_validation_note(f, v, r),
+                        command=lambda f=key, v=full_value, r=reason:
+                            self.show_validation_note(
+                                f,
+                                v,
+                                r
+                            ),
                         bg="#ffcc00",
                         fg="black",
                         font=("Arial", 8, "bold"),
-                        width=2,
+                        width=1,
                         height=1,
                         bd=0,
+                        padx=0,
+                        pady=0,
                         cursor="hand2"
                     )
 
                     self.data_box.window_create(
                         tk.END,
-                        window=info_button
+                        window=info_button,
+                        padx=3
                     )
-
-                    self.data_box.insert(
-                        tk.END,
-                        "\n"
-                    )
-
-                elif result["review"]:
-                    review = "⚠ LOW OCR"
-                    manual_review_count += 1
-
-                    self.data_box.insert(
-                        tk.END,
-                        f"{key:<22}"
-                        f"{value:<32}"
-                        f"{('N/A' if confidence is None else str(confidence) + '%'):>6}      "
-                        f"{review:<12}\n"
-                    )
-
-                else:
-                    review = "✓ OK"
-
-                    self.data_box.insert(
-                        tk.END,
-                        f"{key:<22}"
-                        f"{value:<32}"
-                        f"{('N/A' if confidence is None else str(confidence) + '%'):>6}      "
-                        f"{review:<12}\n"
-                    )
-
-            self.data_box.insert(
-                tk.END,
-                "\n" + "=" * 76 + "\n"
-            )
-
-            if manual_review_count > 0:
 
                 self.data_box.insert(
                     tk.END,
-                    f"⚠ {manual_review_count} field(s) require manual verification.\n"
+                    "\n"
                 )
 
-            else:
+            self.data_box.insert(
+                tk.END,
+                "\n" + "=" * 70 + "\n"
+            )
 
+            if manual_review_count > 0:
+                self.data_box.insert(
+                    tk.END,
+                    f"⚠ {manual_review_count} "
+                    f"field(s) require manual verification.\n"
+                )
+            else:
                 self.data_box.insert(
                     tk.END,
                     "✓ All extracted fields passed the confidence check.\n"
@@ -869,15 +912,14 @@ class OCRApp:
 
         # These are the fields produced by the invoice extractor.
         known_fields = [
-            "Company Name",
-            "GSTIN",
             "Invoice Number",
             "Invoice Date",
-            "Vehicle Number",
-            "Total Amount",
-            "IFSC",
-            "Bank",
-            "Account Number",
+            "Seller Tax ID",
+            "Client Tax ID",
+            "Seller IBAN",
+            "Net Worth",
+            "VAT",
+            "Gross Worth",
         ]
 
         # Sort longest first so names containing another field name
@@ -893,8 +935,8 @@ class OCRApp:
         row_pattern = re.compile(
             rf"^\s*(?P<field>{field_pattern})"
             rf"\s+(?P<value>.*?)"
-            rf"\s+(?P<confidence>\d+(?:\.\d+)?)%"
-            rf"\s+(?:✓ OK|⚠ INVALID|⚠ LOW OCR)\s*$"
+            rf"\s+(?P<confidence>\d+(?:\.\d+)?%|N/A)"
+            rf"\s+(?:✓ OK|⚠ INVALID|⚠ LOW OCR|⚠ OCR N/A)\s*$"
         )
 
         for line in text.splitlines():
@@ -978,11 +1020,28 @@ class OCRApp:
                     validation
                 )
 
-            elif edited_result.get("review", False):
+            elif confidence is None:
+
+                status = "⚠ OCR N/A"
+                manual_review_count += 1
+
+                reason = (
+                    "The edited value was not reliably matched "
+                    "to the available Tesseract OCR words."
+                )
+
+            elif edited_result.get(
+                "review",
+                False
+            ):
 
                 status = "⚠ LOW OCR"
                 manual_review_count += 1
-                reason = ""
+
+                reason = (
+                    "OCR confidence is low for this field. "
+                    "Manual verification is recommended."
+                )
 
             else:
 
@@ -1007,93 +1066,34 @@ class OCRApp:
         # REBUILD TABLE
         # ----------------------------------------------------
 
-        final_text = (
-            f"{'FIELD':<22}"
-            f"{'EXTRACTED VALUE':<32}"
-            f"{'CONF.':<10}"
-            f"{'STATUS':<12}\n"
-            + "-" * 76
-            + "\n"
-        )
-
-        for row in updated_lines:
-
-            final_text += (
-                f"{row['field']:<22}"
-                f"{row['value']:<32}"
-                f"{row['confidence']:>3}%      "
-                f"{row['status']:<12}"
-            )
-
-            # The ? button is added separately below.
-            final_text += "\n"
-
-        final_text += (
-            "\n"
-            + "=" * 76
-            + "\n"
-        )
-
-        # ----------------------------------------------------
-        # MANUAL REVIEW SUMMARY
-        # ----------------------------------------------------
-
-        if manual_review_count > 0:
-
-            final_text += (
-                f"⚠ {manual_review_count} "
-                f"field(s) require manual verification.\n"
-            )
-
-        else:
-
-            final_text += (
-                "✓ All extracted fields passed "
-                "the confidence check.\n"
-            )
-
-        # ----------------------------------------------------
-        # UPDATE GUI
-        # ----------------------------------------------------
-
-        self.data_box.delete(
-            "1.0",
-            tk.END
-        )
-
-        self.data_box.insert(
-            tk.END,
-            final_text
-        )
-
-        # Add clickable validation buttons for invalid fields
         self.data_box.delete("1.0", tk.END)
 
         self.data_box.insert(
             tk.END,
-            f"{'FIELD':<22}"
-            f"{'EXTRACTED VALUE':<32}"
-            f"{'CONF.':<10}"
-            f"{'STATUS':<12}\n"
+            f"{'FIELD':<20}"
+            f"{'EXTRACTED VALUE':<30}"
+            f"{'CONF.':<12}"
+            f"{'STATUS':<14}\n"
         )
-
         self.data_box.insert(
-            tk.END,
             "-" * 76 + "\n"
         )
 
         for row in updated_lines:
+            confidence = row["confidence"]
+            confidence_display = (
+                "N/A" if confidence is None else f"{confidence}%"
+            )
 
             self.data_box.insert(
                 tk.END,
-                f"{row['field']:<22}"
-                f"{row['value']:<32}"
-                f"{row['confidence']:>3}%      "
-                f"{row['status']:<12}"
+                f"{row['field']:<20}"
+                f"{row['value']:<30}"
+                f"{confidence_display:<12}"
+                f"{row['status']:<14}\n"
             )
 
-            if row["status"] == "⚠ INVALID":
-
+            if row["status"] != "✓ OK":
                 info_button = tk.Button(
                     self.data_box,
                     text="?",
@@ -1104,27 +1104,74 @@ class OCRApp:
                     bg="#ffcc00",
                     fg="black",
                     font=("Arial", 8, "bold"),
-                    width=2,
+                    width=1,
                     height=1,
                     bd=0,
+                    padx=0,
+                    pady=0,
                     cursor="hand2"
                 )
 
                 self.data_box.window_create(
                     tk.END,
-                    window=info_button
+                    window=info_button,
+                    padx=3
                 )
 
-            self.data_box.insert(
-                tk.END,
-                "\n"
-            )
+            self.data_box.insert(tk.END, "\n")
 
         self.data_box.insert(
             tk.END,
-            "\n" + "=" * 76 + "\n"
+            "\n" + "=" * 70 + "\n"
         )
-      
+
+        if manual_review_count > 0:
+            self.data_box.insert(
+                tk.END,
+                f"⚠ {manual_review_count} "
+                f"field(s) require manual verification.\n"
+            )
+        else:
+            self.data_box.insert(
+                tk.END,
+                "✓ All extracted fields passed the confidence check.\n"
+            )
+
+        # Save the same clean text table to the output file.
+        final_text = (
+            f"{'FIELD':<20}"
+            f"{'EXTRACTED VALUE':<30}"
+            f"{'CONF.':<12}"
+            f"{'STATUS':<14}\n"
+            + "-" * 72
+            + "\n"  
+        )
+
+        for row in updated_lines:
+            confidence = row["confidence"]
+            confidence_display = (
+                "N/A" if confidence is None else f"{confidence}%"
+            )
+            final_text += (
+                f"{row['field']:<20}"
+                f"{row['value']:<30}"
+                f"{confidence_display:<12}"
+                f"{row['status']:<14}\n"
+            )
+
+        final_text += "\n" + "=" * 70 + "\n"
+
+        if manual_review_count > 0:
+            final_text += (
+                f"⚠ {manual_review_count} "
+                f"field(s) require manual verification.\n"
+            )
+        else:
+            final_text += (
+                "✓ All extracted fields passed "
+                "the confidence check.\n"
+            )
+
         # ----------------------------------------------------
         # SAVE OUTPUT
         # ----------------------------------------------------

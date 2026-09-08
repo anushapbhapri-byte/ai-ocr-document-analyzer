@@ -82,6 +82,8 @@ def validate_field(field, value):
             "%d-%b-%Y",
             "%d/%m/%Y",
             "%d/%m/%y",
+            "%m/%d/%Y",
+            "%m/%d/%y",
             "%d-%m-%Y",
             "%d-%m-%y",
             "%Y-%m-%d",
@@ -90,7 +92,7 @@ def validate_field(field, value):
         for fmt in date_formats:
 
             try:
-                datetime.strptime(value, fmt)
+                datetime.strptime(str(value).strip(), fmt)
 
                 return {
                     "valid": True,
