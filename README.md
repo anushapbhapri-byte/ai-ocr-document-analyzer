@@ -35,6 +35,14 @@ The project was evaluated using a benchmark of 50 invoice images and correspondi
 
 ---
 
+## Application Preview
+
+The project includes a desktop interface for uploading invoice images, running OCR, viewing extracted fields, checking validation status, and reviewing OCR confidence.
+
+![OCR Document Analyzer](application_preview.png)
+
+The interface shows the selected invoice, extracted invoice fields, OCR confidence, validation status, and fields that may require manual verification.
+
 ## Features
 
 - Invoice image preprocessing using OpenCV
