@@ -6,3 +6,7 @@ venv/
 .pytest_cache/
 .env
 .vscode/
+# Generated OCR output graphs
+outputs/ocr_confidence_graph.png
+outputs/ocr_quality_graph.png
+outputs/word_count_graph.png
