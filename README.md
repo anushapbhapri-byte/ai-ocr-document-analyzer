@@ -267,6 +267,14 @@ Run:
 python gui_app.py
 ```
 
+### Dashboard
+
+The project also includes a Streamlit dashboard for viewing benchmark results, field-level performance, error categories, and batch-processing outcomes.
+
+Run:
+
+    streamlit run dashboard.py
+
 The application allows you to:
 
 - Select an invoice image
@@ -299,8 +307,10 @@ ai-ocr-document-analyzer/
 │   └── batch/
 │
 ├── tests/
-│   └── test_project.py
-│
+    │   └── test_project.py
+    │
+├── application_preview.png
+├── architecture_diagram.png
 ├── analytics.py
 ├── batch_processor.py
 ├── benchmark_evaluation.py
@@ -335,7 +345,9 @@ ai-ocr-document-analyzer/
 | Pillow | Image handling |
 | Tkinter | Desktop application |
 | OpenPyXL | Excel output |
+| Pandas | Tabular data processing and reporting |
 | Matplotlib | Charts and benchmark visualizations |
+| Streamlit | Benchmark and batch-results dashboard |
 | pytest | Testing |
 
 ---
