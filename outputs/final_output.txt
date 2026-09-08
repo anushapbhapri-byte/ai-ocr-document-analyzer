@@ -1,7 +1,0 @@
-FIELD                 EXTRACTED VALUE                 CONF.     STATUS      
-----------------------------------------------------------------------------
-Invoice Number        96947403                         94%      ✓ OK        
-Invoice Date          10/09/2011                       95%      ✓ OK        
-
-============================================================================
-✓ All extracted fields passed the confidence check.
