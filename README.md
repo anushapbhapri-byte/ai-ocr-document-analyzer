@@ -307,8 +307,8 @@ ai-ocr-document-analyzer/
 │   └── batch/
 │
 ├── tests/
-|    │   └── test_project.py
-|    │
+|   └── test_project.py
+|
 ├── application_preview.png
 ├── architecture_diagram.png
 ├── analytics.py
