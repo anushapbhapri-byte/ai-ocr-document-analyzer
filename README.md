@@ -43,6 +43,16 @@ The project includes a desktop interface for uploading invoice images, running O
 
 The interface shows the selected invoice, extracted invoice fields, OCR confidence, validation status, and fields that may require manual verification.
 
+---
+
+## Project Architecture
+
+The application follows an end-to-end document-processing pipeline:
+
+![Project Architecture](architecture_diagram.png)
+
+---
+
 ## Features
 
 - Invoice image preprocessing using OpenCV
