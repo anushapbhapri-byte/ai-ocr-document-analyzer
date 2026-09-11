@@ -1,6 +1,6 @@
-# AI OCR Document Analyzer
+# Noisy Invoice Digitization — AI OCR Document Analyzer
 
-An OCR-based invoice processing project that extracts important fields from invoice images, validates the extracted data, checks OCR confidence, and identifies invoices that may need manual review.
+An OCR-based invoice processing pipeline designed to evaluate and improve structured data extraction from noisy invoice images through preprocessing, validation, confidence analysis, and human-review routing.
 
 The project uses Tesseract OCR and OpenCV for image processing, along with Python-based extraction, validation, benchmarking, and reporting.
 
